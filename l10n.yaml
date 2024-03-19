@@ -1,0 +1,5 @@
+synthetic-package: false
+output-dir: lib/localization
+use-escaping: true
+arb-dir: lib/localization/arb_file
+output-localization-file: app_localizations.dart
