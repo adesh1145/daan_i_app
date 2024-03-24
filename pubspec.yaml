@@ -15,7 +15,8 @@ dependencies:
   get:
   connectivity_plus:
   cached_network_image:
- 
+  firebase_core: 
+  firebase_messaging: 
   pin_code_fields:
   flutter_svg:
   flutter_screenutil:
@@ -31,7 +32,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  change_app_package_name: ^1.1.0
  
   flutter_lints: ^2.0.0
 

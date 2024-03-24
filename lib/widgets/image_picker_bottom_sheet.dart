@@ -38,9 +38,9 @@ class ImagePickerBottomSheets extends GetxController {
                 Container(
                   padding: EdgeInsets.only(
                       left: 17.w, top: 17.h, right: 17.w, bottom: 16.h),
-                  decoration: AppDecoration.whiteFill.copyWith(
-                    borderRadius: BorderRadiusStyle.customBorderTL20,
-                  ),
+                  // decoration: AppDecoration.whiteFill.copyWith(
+                  //   borderRadius: BorderRadiusStyle.customBorderTL20,
+                  // ),
                   child: Column(
                     children: [
                       Padding(
@@ -72,9 +72,9 @@ class ImagePickerBottomSheets extends GetxController {
                                     Container(
                                       margin: EdgeInsets.only(top: 10.h),
                                       padding: EdgeInsets.all(12.w),
-                                      decoration: AppDecoration.cta.copyWith(
-                                        borderRadius: BorderRadius.circular(50),
-                                      ),
+                                      // decoration: AppDecoration.cta.copyWith(
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
                                       child: Icon(
                                         Icons.image_rounded,
                                         size: 34.w,
@@ -112,9 +112,9 @@ class ImagePickerBottomSheets extends GetxController {
                                     Container(
                                       margin: EdgeInsets.only(top: 10.h),
                                       padding: EdgeInsets.all(12.w),
-                                      decoration: AppDecoration.cta.copyWith(
-                                        borderRadius: BorderRadius.circular(50),
-                                      ),
+                                      // decoration: AppDecoration.cta.copyWith(
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
                                       child: Icon(
                                         Icons.camera,
                                         size: 34.w,

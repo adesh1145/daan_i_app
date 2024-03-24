@@ -6,6 +6,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appName => 'Daan-i';
+
+  @override
+  String get selectLanguage => 'Select Language';
+
+  @override
+  String get english => 'English';
+
+  @override
+  String get hindi => 'हिंदी';
+
+  @override
+  String get continueTxt => 'Continue';
 }
 
 /// The translations for English, as used in the United States (`en_US`).
@@ -14,4 +26,16 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
 
   @override
   String get appName => 'Daan-i';
+
+  @override
+  String get selectLanguage => 'Select Language';
+
+  @override
+  String get english => 'English';
+
+  @override
+  String get hindi => 'हिंदी';
+
+  @override
+  String get continueTxt => 'Continue';
 }

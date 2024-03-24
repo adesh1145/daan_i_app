@@ -20,4 +20,7 @@ export 'package:flutter/services.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 // export 'package:medcab_consumer/core/utils/progress_dialog_utils.dart';
 export '../../core/constants/url_constants.dart';
-export '../routes/app_routes.dart';
+export '../theme/text_scaler.dart';
+export '../widgets/my_widget/custom_button.dart';
+export '../widgets/my_widget/custom_text.dart';
+export '../localization/app_localizations.dart';

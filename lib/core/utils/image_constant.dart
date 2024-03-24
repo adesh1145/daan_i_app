@@ -316,4 +316,7 @@ class ImageConstant {
   static String newbanner = 'assets/images/man_power/bannernew.png';
 
   // ! Daan - i Images
+  static String appLogo = 'assets/images/logo.jpeg';
+  static String appLogoSvg = 'assets/images/logo.svg';
+  static String indiaFlag = 'assets/images/india_flag.svg';
 }

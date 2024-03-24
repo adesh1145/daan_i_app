@@ -1,3 +1,7 @@
 {
-    "appName": "दान -आई"
+    "appName": "दान -आई",
+    "selectLanguage": "भाषा चुने",
+    "english": "अंग्रेज़ी",
+    "hindi": "हिंदी",
+    "continueTxt": "आगे बढ़े"
 }

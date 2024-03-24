@@ -35,9 +35,9 @@ class CustomContainerDashboard extends StatelessWidget {
                   right: 15.w,
                   bottom: 11.h,
                 ),
-                decoration: AppDecoration.filledInputField.copyWith(
-                  borderRadius: BorderRadiusStyle.roundedBorder6,
-                ),
+                // decoration: AppDecoration.filledInputField.copyWith(
+                //   borderRadius: BorderRadiusStyle.roundedBorder6,
+                // ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,9 +83,9 @@ class CustomContainerDashboard extends StatelessWidget {
                 right: 16.w,
                 bottom: 12.h,
               ),
-              decoration: AppDecoration.filledInputField.copyWith(
-                borderRadius: BorderRadiusStyle.roundedBorder6,
-              ),
+              // decoration: AppDecoration.filledInputField.copyWith(
+              //   borderRadius: BorderRadiusStyle.roundedBorder6,
+              // ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,

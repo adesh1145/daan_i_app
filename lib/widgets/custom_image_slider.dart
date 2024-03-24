@@ -139,8 +139,8 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
           margin: EdgeInsets.only(left: 4.w, right: 4.w),
           child: bannerSectionNumer == index
               ? Container(
-                  decoration: AppDecoration.fillbgGrey.copyWith(
-                      borderRadius: BorderRadiusStyle.roundedBorder12),
+                  // decoration: AppDecoration.fillbgGrey.copyWith(
+                  //     borderRadius: BorderRadiusStyle.roundedBorder12),
                   padding: EdgeInsets.only(
                       left: 8.w, right: 8.w, top: 0.5.h, bottom: 0.5.h),
                   child: Text(
@@ -319,8 +319,8 @@ class _CustomImageSlider2State extends State<CustomImageSlider2> {
           margin: EdgeInsets.only(left: 4.w, right: 4.w),
           child: bannerSectionNumer == index
               ? Container(
-                  decoration: AppDecoration.fillbgGrey.copyWith(
-                      borderRadius: BorderRadiusStyle.roundedBorder12),
+                  // decoration: AppDecoration.fillbgGrey.copyWith(
+                  //     borderRadius: BorderRadiusStyle.roundedBorder12),
                   padding: EdgeInsets.only(
                       left: 8.w, right: 8.w, top: 0.5.h, bottom: 0.5.h),
                   child: Text(

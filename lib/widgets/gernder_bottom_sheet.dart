@@ -31,9 +31,9 @@ class GenderBottomSheets extends GetxController {
                   child: Container(
                     padding: EdgeInsets.only(
                         left: 17.w, top: 17.h, right: 17.w, bottom: 16.h),
-                    decoration: AppDecoration.whiteFill.copyWith(
-                      borderRadius: BorderRadiusStyle.customBorderTL20,
-                    ),
+                    // decoration: AppDecoration.whiteFill.copyWith(
+                    //   borderRadius: BorderRadiusStyle.customBorderTL20,
+                    // ),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -60,16 +60,16 @@ class GenderBottomSheets extends GetxController {
                               margin: EdgeInsets.only(top: 10.h),
                               padding: EdgeInsets.only(
                                   top: 1.h, bottom: 1.h, right: 36.w),
-                              decoration:
-                                  controller.genderId.value == index.toString()
-                                      ? AppDecoration.selectedGreen.copyWith(
-                                          borderRadius:
-                                              BorderRadiusStyle.roundedBorder6,
-                                        )
-                                      : AppDecoration.borderInputField.copyWith(
-                                          borderRadius:
-                                              BorderRadiusStyle.roundedBorder6,
-                                        ),
+                              // decoration:
+                              //     controller.genderId.value == index.toString()
+                              //         ? AppDecoration.selectedGreen.copyWith(
+                              //             borderRadius:
+                              //                 BorderRadiusStyle.roundedBorder6,
+                              //           )
+                              //         : AppDecoration.borderInputField.copyWith(
+                              //             borderRadius:
+                              //                 BorderRadiusStyle.roundedBorder6,
+                              //           ),
                               child: RadioListTile(
                                 title: Center(
                                     child: Text(

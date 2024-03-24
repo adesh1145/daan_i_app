@@ -42,9 +42,9 @@ datePickerBottomSheets(
                 child: Container(
                   padding: EdgeInsets.only(
                       left: 16.w, top: 16.h, right: 16.w, bottom: 16.h),
-                  decoration: AppDecoration.fillWhite.copyWith(
-                    borderRadius: BorderRadiusStyle.customBorderTL20,
-                  ),
+                  // decoration: AppDecoration.fillWhite.copyWith(
+                  //   borderRadius: BorderRadiusStyle.customBorderTL20,
+                  // ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -94,7 +94,7 @@ datePickerBottomSheets(
           ),
         ),
         bottomNavigationBar: Container(
-          decoration: AppDecoration.fillWhite,
+          // decoration: AppDecoration.fillWhite,
           child: Padding(
             padding: EdgeInsets.only(right: 16.w, left: 16.w, bottom: 16.h),
             child: Padding(
