@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1033834360605",
+    "project_id": "daan-i",
+    "storage_bucket": "daan-i.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033834360605:android:268aa1c96f307df372fbf4",
+        "android_client_info": {
+          "package_name": "com.ak_technology.daan_i"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9iuyW6khJ-houQAkNB4-CDe9ik6Zdwdg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

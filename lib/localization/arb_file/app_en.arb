@@ -1,3 +1,7 @@
 {
-    "appName": "Daan-i"
+    "appName": "Daan-i",
+    "selectLanguage": "Select Language",
+    "english": "English",
+    "hindi": "हिंदी",
+    "continueTxt": "Continue"
 }

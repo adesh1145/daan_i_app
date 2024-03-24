@@ -17,9 +17,9 @@ class SuccessfulBookingBottomSheets extends GetxController {
               left: 16.w,
               right: 16.w,
             ),
-            decoration: AppDecoration.fillWhite.copyWith(
-              borderRadius: BorderRadiusStyle.customBorderTL20,
-            ),
+            // decoration: AppDecoration.fillWhite.copyWith(
+            //   borderRadius: BorderRadiusStyle.customBorderTL20,
+            // ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,

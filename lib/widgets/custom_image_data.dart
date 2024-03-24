@@ -27,9 +27,9 @@ class CustomImageData extends StatelessWidget {
                 )
               : url == "" || url == "null" || url == null
                   ? Container(
-                      decoration: AppDecoration.outlineStroke.copyWith(
-                        borderRadius: BorderRadiusStyle.roundedBorder6,
-                      ),
+                      // decoration: AppDecoration.outlineStroke.copyWith(
+                      //   borderRadius: BorderRadiusStyle.roundedBorder6,
+                      // ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -48,9 +48,9 @@ class CustomImageData extends StatelessWidget {
                       ),
                     )
                   : Container(
-                      decoration: AppDecoration.outlineGray30001.copyWith(
-                        borderRadius: BorderRadiusStyle.roundedBorder6,
-                      ),
+                      // decoration: AppDecoration.outlineGray30001.copyWith(
+                      //   borderRadius: BorderRadiusStyle.roundedBorder6,
+                      // ),
                       child: CustomImageView(
                           url: UrlConstants.imageUrl + "" + url!,
                           fit: BoxFit.fill),

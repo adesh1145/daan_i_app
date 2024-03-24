@@ -99,6 +99,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Daan-i'**
   String get appName;
+
+  /// No description provided for @selectLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Language'**
+  String get selectLanguage;
+
+  /// No description provided for @english.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get english;
+
+  /// No description provided for @hindi.
+  ///
+  /// In en, this message translates to:
+  /// **'हिंदी'**
+  String get hindi;
+
+  /// No description provided for @continueTxt.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continueTxt;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

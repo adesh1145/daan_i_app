@@ -14,7 +14,7 @@ class CustomPickupDropText extends StatelessWidget {
     return Container(
         width: double.maxFinite,
         // padding: EdgeInsets.all(16.h),
-        decoration: AppDecoration.filledWhite,
+        // decoration: AppDecoration.filledWhite,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,

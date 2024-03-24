@@ -1,4 +1,4 @@
-package com.example.daan_i_app
+package com.ak_technology.daan_i
 
 import io.flutter.embedding.android.FlutterActivity
 
