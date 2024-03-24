@@ -86,15 +86,15 @@ class SelectLanguageScreen extends GetWidget<SelectLanguageController> {
             child: CustomElevatedButtonWithIcon(
               suffixWidget: Icon(
                 Icons.chevron_right,
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.background,
               ),
               text: AppLocalizations.of(context)!.continueTxt,
               textStyle: TextStyle(
                 fontSize: 16.sp,
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.background,
               ),
               borderRadius: BorderRadiusStyle.roundedBorder8,
-              backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+              backgroundColor: Theme.of(context).colorScheme.primary,
             ),
           ),
         ],
