@@ -8,6 +8,7 @@ class CustomElevatedButton extends StatelessWidget {
       this.text = "",
       this.alignment,
       this.autofocus = false,
+      this.isExpanded = true,
       this.backgroundColor,
       this.borderColor,
       this.borderRadius,
@@ -26,36 +27,188 @@ class CustomElevatedButton extends StatelessWidget {
   final AlignmentGeometry? alignment;
   final double? elevation;
   final double? borderWidth;
+  final bool isExpanded;
   final BorderRadiusGeometry? borderRadius;
   final EdgeInsetsGeometry? padding;
   final Duration? animationDuration;
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onTap,
-      autofocus: autofocus,
-      style: ButtonStyle(
-          backgroundColor: backgroundColor == null
-              ? null
-              : MaterialStatePropertyAll(backgroundColor),
-          alignment: alignment,
-          elevation:
-              elevation == null ? null : MaterialStatePropertyAll(elevation),
-          padding: padding == null ? null : MaterialStatePropertyAll(padding),
-          shape: borderRadius == null
-              ? null
-              : MaterialStatePropertyAll(
-                  RoundedRectangleBorder(
-                    borderRadius: borderRadius!,
+    return isExpanded
+        ? Row(
+            children: [
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: onTap,
+                  autofocus: autofocus,
+                  style: TextButton.styleFrom(
+                    // maximumSize: Size(double.maxFinite, 40.h),
+                    backgroundColor: backgroundColor ??
+                        Theme.of(context).colorScheme.primary,
+                    alignment: alignment,
+                    elevation: elevation == null ? null : (elevation),
+                    padding: padding,
+
+                    shape: borderRadius == null
+                        ? RoundedRectangleBorder(
+                            borderRadius: BorderRadiusStyle.roundedBorder8,
+                          )
+                        : RoundedRectangleBorder(
+                            borderRadius: borderRadius!,
+                          ),
+                    animationDuration: animationDuration,
+                    // enableFeedback:
                   ),
+                  child: child ??
+                      CustomText(
+                        text,
+                        style: textStyle ??
+                            TextStyle(
+                              fontSize: 16.sp,
+                              color:
+                                  Theme.of(Get.context!).colorScheme.background,
+                            ),
+                      ),
                 ),
-          animationDuration: animationDuration),
-      child: child ??
-          CustomText(
-            text,
-            style: textStyle,
-          ),
-    );
+              ),
+            ],
+          )
+        : ElevatedButton(
+            onPressed: onTap,
+            autofocus: autofocus,
+            style: TextButton.styleFrom(
+              // maximumSize: Size(double.maxFinite, 40.h),
+              backgroundColor:
+                  backgroundColor ?? Theme.of(context).colorScheme.primary,
+              alignment: alignment,
+              elevation: elevation == null ? null : (elevation),
+              padding: padding,
+
+              shape: borderRadius == null
+                  ? RoundedRectangleBorder(
+                      borderRadius: BorderRadiusStyle.roundedBorder8,
+                    )
+                  : RoundedRectangleBorder(
+                      borderRadius: borderRadius!,
+                    ),
+              animationDuration: animationDuration,
+              // enableFeedback:
+            ),
+            child: child ??
+                CustomText(
+                  text,
+                  style: textStyle ??
+                      TextStyle(
+                        fontSize: 16.sp,
+                        color: Theme.of(Get.context!).colorScheme.background,
+                      ),
+                ),
+          );
+  }
+}
+
+class CustomOutlinedButton extends StatelessWidget {
+  const CustomOutlinedButton(
+      {super.key,
+      this.onTap,
+      this.child,
+      this.text = "",
+      this.alignment,
+      this.autofocus = false,
+      this.backgroundColor,
+      this.borderColor,
+      this.borderRadius,
+      this.animationDuration,
+      this.borderWidth,
+      this.elevation,
+      this.isExpanded = true,
+      this.padding,
+      this.textStyle});
+  final bool isExpanded;
+  final String text;
+  final Widget? child;
+  final VoidCallback? onTap;
+  final TextStyle? textStyle;
+  final bool autofocus;
+  final Color? backgroundColor;
+  final Color? borderColor;
+  final AlignmentGeometry? alignment;
+  final double? elevation;
+  final double? borderWidth;
+  final BorderRadiusGeometry? borderRadius;
+  final EdgeInsetsGeometry? padding;
+  final Duration? animationDuration;
+  @override
+  Widget build(BuildContext context) {
+    return isExpanded
+        ? Row(
+            children: [
+              Expanded(
+                child: OutlinedButton(
+                  onPressed: onTap,
+                  autofocus: autofocus,
+                  style: TextButton.styleFrom(
+                    // maximumSize: Size(double.maxFinite, 40.h),
+                    backgroundColor: backgroundColor ??
+                        Theme.of(context).colorScheme.primary,
+                    alignment: alignment,
+                    elevation: elevation == null ? null : (elevation),
+                    padding: padding,
+
+                    shape: borderRadius == null
+                        ? RoundedRectangleBorder(
+                            borderRadius: BorderRadiusStyle.roundedBorder8,
+                          )
+                        : RoundedRectangleBorder(
+                            borderRadius: borderRadius!,
+                          ),
+                    animationDuration: animationDuration,
+                    // enableFeedback:
+                  ),
+                  child: child ??
+                      CustomText(
+                        text,
+                        style: textStyle ??
+                            TextStyle(
+                              fontSize: 16.sp,
+                              color:
+                                  Theme.of(Get.context!).colorScheme.background,
+                            ),
+                      ),
+                ),
+              )
+            ],
+          )
+        : OutlinedButton(
+            onPressed: onTap,
+            autofocus: autofocus,
+            style: TextButton.styleFrom(
+              // maximumSize: Size(double.maxFinite, 40.h),
+              backgroundColor:
+                  backgroundColor ?? Theme.of(context).colorScheme.primary,
+              alignment: alignment,
+              elevation: elevation == null ? null : (elevation),
+              padding: padding,
+
+              shape: borderRadius == null
+                  ? RoundedRectangleBorder(
+                      borderRadius: BorderRadiusStyle.roundedBorder8,
+                    )
+                  : RoundedRectangleBorder(
+                      borderRadius: borderRadius!,
+                    ),
+              animationDuration: animationDuration,
+              // enableFeedback:
+            ),
+            child: child ??
+                CustomText(
+                  text,
+                  style: textStyle ??
+                      TextStyle(
+                        fontSize: 16.sp,
+                        color: Theme.of(Get.context!).colorScheme.background,
+                      ),
+                ),
+          );
   }
 }
 
@@ -94,128 +247,74 @@ class CustomElevatedButtonWithIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: onTap,
-        autofocus: autofocus,
-        style: TextButton.styleFrom(
-          // maximumSize: Size(double.maxFinite, 40.h),
-          backgroundColor: backgroundColor == null ? null : (backgroundColor),
-          alignment: alignment,
-          elevation: elevation == null ? null : (elevation),
-          padding: padding,
-
-          shape: borderRadius == null
-              ? null
-              : RoundedRectangleBorder(
-                  borderRadius: borderRadius!,
-                ),
-          animationDuration: animationDuration,
-          // enableFeedback:
-        ),
-        child: _buildButtonWithOrWithoutIcon());
+      onPressed: onTap,
+      autofocus: autofocus,
+      style: TextButton.styleFrom(
+        // maximumSize: Size(double.maxFinite, 40.h),
+        backgroundColor:
+            backgroundColor ?? Theme.of(context).colorScheme.primary,
+        alignment: alignment,
+        elevation: elevation == null ? null : (elevation),
+        padding: padding,
+        textStyle: textStyle,
+        shape: borderRadius == null
+            ? RoundedRectangleBorder(
+                borderRadius: BorderRadiusStyle.roundedBorder8,
+              )
+            : RoundedRectangleBorder(
+                borderRadius: borderRadius!,
+              ),
+        animationDuration: animationDuration,
+        // enableFeedback:
+      ),
+      child: _buildButtonWithOrWithoutIcon(),
+    );
   }
 
   _buildButtonWithOrWithoutIcon() {
-    if (suffixWidget != null) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          if (isTextCenter) SizedBox(),
-          Center(
-            child: CustomText(
-              text,
-              style: textStyle,
-            ),
-          ), //
-          suffixWidget ?? const SizedBox(),
-        ],
-      );
-    } else {
-      return Center(
-        child: CustomText(
-          text,
-          style: textStyle,
-        ),
-      );
-    }
-  }
-}
-
-class CustomOutlinedButton extends StatelessWidget {
-  const CustomOutlinedButton(
-      {super.key,
-      this.onTap,
-      this.child,
-      this.text = "",
-      this.alignment,
-      this.autofocus = false,
-      this.backgroundColor,
-      this.borderColor,
-      this.borderRadius,
-      this.animationDuration,
-      this.borderWidth,
-      this.elevation,
-      this.padding,
-      this.textStyle});
-  final String text;
-  final Widget? child;
-  final VoidCallback? onTap;
-  final TextStyle? textStyle;
-  final bool autofocus;
-  final Color? backgroundColor;
-  final Color? borderColor;
-  final AlignmentGeometry? alignment;
-  final double? elevation;
-  final double? borderWidth;
-  final BorderRadiusGeometry? borderRadius;
-  final EdgeInsetsGeometry? padding;
-  final Duration? animationDuration;
-  @override
-  Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: onTap,
-      autofocus: autofocus,
-      style: ButtonStyle(
-          backgroundColor: backgroundColor == null
-              ? null
-              : MaterialStatePropertyAll(backgroundColor),
-          alignment: alignment,
-          elevation:
-              elevation == null ? null : MaterialStatePropertyAll(elevation),
-          padding: padding == null ? null : MaterialStatePropertyAll(padding),
-          shape: borderRadius == null
-              ? null
-              : MaterialStatePropertyAll(
-                  RoundedRectangleBorder(
-                    borderRadius: borderRadius!,
-                  ),
-                ),
-          animationDuration: animationDuration),
-      child: child ??
-          CustomText(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        if (isTextCenter) const SizedBox(),
+        Center(
+          child: CustomText(
             text,
-            style: textStyle,
+            style: textStyle ??
+                TextStyle(
+                  fontSize: 16.sp,
+                  color: Theme.of(Get.context!).colorScheme.background,
+                ),
           ),
+        ), //
+        suffixWidget ??
+            Icon(
+              Icons.chevron_right,
+              color: Theme.of(Get.context!).colorScheme.background,
+            ),
+      ],
     );
   }
 }
 
 class CustomOutlinedButtonWithIcon extends StatelessWidget {
-  const CustomOutlinedButtonWithIcon(
-      {super.key,
-      this.onTap,
-      this.child,
-      this.text = "",
-      this.alignment,
-      this.autofocus = false,
-      this.backgroundColor,
-      this.borderColor,
-      this.borderRadius,
-      this.borderWidth,
-      this.animationDuration,
-      this.elevation,
-      this.padding,
-      this.textStyle,
-      required this.icon});
+  const CustomOutlinedButtonWithIcon({
+    super.key,
+    this.onTap,
+    this.child,
+    this.text = "",
+    this.alignment,
+    this.autofocus = false,
+    this.backgroundColor,
+    this.borderColor,
+    this.borderRadius,
+    this.borderWidth,
+    this.animationDuration,
+    this.elevation,
+    this.padding,
+    this.textStyle,
+    this.suffixWidget,
+    this.isTextCenter = true,
+  });
   final String text;
   final Widget? child;
   final VoidCallback? onTap;
@@ -228,37 +327,54 @@ class CustomOutlinedButtonWithIcon extends StatelessWidget {
   final double? borderWidth;
   final BorderRadiusGeometry? borderRadius;
   final EdgeInsetsGeometry? padding;
-  final Widget icon;
+  final bool isTextCenter;
+  final Widget? suffixWidget;
   final Duration? animationDuration;
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      icon: icon,
+    return TextButton(
       onPressed: onTap,
       autofocus: autofocus,
-      style: ButtonStyle(
-        backgroundColor: backgroundColor == null
-            ? null
-            : MaterialStatePropertyAll(backgroundColor),
+      style: TextButton.styleFrom(
+        // maximumSize: Size(double.maxFinite, 40.h),
+        backgroundColor: backgroundColor == null ? null : (backgroundColor),
         alignment: alignment,
-        elevation:
-            elevation == null ? null : MaterialStatePropertyAll(elevation),
-        padding: padding == null ? null : MaterialStatePropertyAll(padding),
+        elevation: elevation == null ? null : (elevation),
+        padding: padding,
+
         shape: borderRadius == null
             ? null
-            : MaterialStatePropertyAll(
-                RoundedRectangleBorder(
-                  borderRadius: borderRadius!,
-                ),
+            : RoundedRectangleBorder(
+                borderRadius: borderRadius!,
               ),
         animationDuration: animationDuration,
         // enableFeedback:
       ),
-      label: child ??
-          CustomText(
+      child: _buildButtonWithOrWithIcon(),
+    );
+  }
+
+  Widget _buildButtonWithOrWithIcon() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        if (isTextCenter) SizedBox(),
+        Center(
+          child: CustomText(
             text,
-            style: textStyle,
+            style: textStyle ??
+                TextStyle(
+                  fontSize: 16.sp,
+                  color: Theme.of(Get.context!).colorScheme.background,
+                ),
           ),
+        ), //
+        suffixWidget ??
+            Icon(
+              Icons.chevron_right,
+              color: Theme.of(Get.context!).colorScheme.background,
+            ),
+      ],
     );
   }
 }

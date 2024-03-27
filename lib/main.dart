@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       minTextAdapt: true,
       splitScreenMode: true,
+      designSize: const Size(360, 690),
       builder: (context, child) {
         return DismissKeyboard(
           child: GetMaterialApp(
@@ -112,18 +113,19 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            CustomElevatedButton(onTap: () {}, child: Text("My Custom Button")),
-            BackButton(),
+            CustomElevatedButton(
+                onTap: () {}, child: const Text("My Custom Button")),
+            const BackButton(),
             FloatingActionButton(
               onPressed: () {},
             ),
-            OutlinedButton(onPressed: () {}, child: Text("dghg h thrtd")),
-            TextButton(onPressed: () {}, child: Text("dghg h thrtd")),
-            CloseButton(),
+            OutlinedButton(onPressed: () {}, child: const Text("dghg h thrtd")),
+            TextButton(onPressed: () {}, child: const Text("dghg h thrtd")),
+            const CloseButton(),
             ElevatedButton.icon(
               onPressed: () {},
-              icon: Icon(Icons.abc),
-              label: Text("dghg h thrtd"),
+              icon: const Icon(Icons.abc),
+              label: const Text("dghg h thrtd"),
             ),
             Card(
               child: SizedBox(

@@ -107,8 +107,6 @@ class ImageConstant {
 
   static String locationBg = 'assets/images/location_bg.svg';
 
-  static String splash = 'assets/images/splash.png';
-
   static String add = 'assets/images/add.svg';
 
   static String ambulanceIcon = 'assets/images/ambulance_icon.svg';
@@ -317,6 +315,8 @@ class ImageConstant {
 
   // ! Daan - i Images
   static String appLogo = 'assets/images/logo.jpeg';
+  static String splash = 'assets/images/logo.jpeg';
   static String appLogoSvg = 'assets/images/logo.svg';
   static String indiaFlag = 'assets/images/india_flag.svg';
+  static String google = 'assets/images/google.svg';
 }

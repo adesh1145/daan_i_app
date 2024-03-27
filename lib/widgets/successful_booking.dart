@@ -1,7 +1,7 @@
 import 'package:daan_i_app/core/app_export.dart';
 
 import '../../../widgets/custom_button_bottom.dart';
-import 'custom_image_view.dart';
+import 'my_widget/custom_image_view.dart';
 
 class SuccessfulBookingBottomSheets extends GetxController {
   SuccessfulBookingBottomSheets(controller, String status,

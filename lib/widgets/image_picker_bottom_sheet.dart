@@ -3,7 +3,7 @@ import 'dart:io' show Platform;
 import '../core/app_export.dart';
 import '../core/utils/flutter_toast.dart';
 import 'custom_image_controller.dart';
-import 'custom_image_view.dart';
+import 'my_widget/custom_image_view.dart';
 
 class ImagePickerBottomSheets extends GetxController {
   final Rx<PermissionStatus> _permissionStatus = PermissionStatus.granted.obs;

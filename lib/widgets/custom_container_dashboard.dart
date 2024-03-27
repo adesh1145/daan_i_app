@@ -5,7 +5,7 @@ import '../../core/constants/constants.dart';
 import '../../core/utils/image_constant.dart';
 import '../../theme/app_decoration.dart';
 import '../../theme/app_style.dart';
-import 'custom_image_view.dart';
+import 'my_widget/custom_image_view.dart';
 
 // ignore: must_be_immutable
 class CustomContainerDashboard extends StatelessWidget {
