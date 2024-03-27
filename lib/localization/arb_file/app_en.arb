@@ -1,7 +1,20 @@
 {
+    "@@locale": "en",
     "appName": "Daan-i",
     "selectLanguage": "Select Language",
     "english": "English",
     "hindi": "हिंदी",
-    "continueTxt": "Continue"
+    "continueTxt": "Continue",
+    "donar": "Donar",
+    "ngo": "NGO",
+    "welcomeDaani": "Welcome Daan-i",
+    "loginandSignUp": "Login / SignUp",
+    "enterEmail": " Enter Email",
+    "email": "Email",
+    "enterPassword": "Enter Password",
+    "password": "Password",
+    "login": "Log in",
+    "register": "Register ?",
+    "forgetPassword": "Forget Password",
+    "loginwith": "Login with"
 }

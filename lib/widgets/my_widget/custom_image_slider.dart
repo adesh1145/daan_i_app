@@ -2,8 +2,8 @@
 
 import 'dart:async';
 import '../../../../../core/app_export.dart';
-import '../theme/app_decoration.dart';
-import '../theme/app_style.dart';
+import '../../theme/app_decoration.dart';
+import '../../theme/app_style.dart';
 import 'custom_image_view.dart';
 
 class CustomImageSlider extends StatefulWidget {

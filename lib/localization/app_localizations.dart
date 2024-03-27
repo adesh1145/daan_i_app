@@ -123,6 +123,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Continue'**
   String get continueTxt;
+
+  /// No description provided for @donar.
+  ///
+  /// In en, this message translates to:
+  /// **'Donar'**
+  String get donar;
+
+  /// No description provided for @ngo.
+  ///
+  /// In en, this message translates to:
+  /// **'NGO'**
+  String get ngo;
+
+  /// No description provided for @welcomeDaani.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome Daan-i'**
+  String get welcomeDaani;
+
+  /// No description provided for @loginandSignUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Login / SignUp'**
+  String get loginandSignUp;
+
+  /// No description provided for @enterEmail.
+  ///
+  /// In en, this message translates to:
+  /// **' Enter Email'**
+  String get enterEmail;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @enterPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Password'**
+  String get enterPassword;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in'**
+  String get login;
+
+  /// No description provided for @register.
+  ///
+  /// In en, this message translates to:
+  /// **'Register ?'**
+  String get register;
+
+  /// No description provided for @forgetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forget Password'**
+  String get forgetPassword;
+
+  /// No description provided for @loginwith.
+  ///
+  /// In en, this message translates to:
+  /// **'Login with'**
+  String get loginwith;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

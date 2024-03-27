@@ -1,6 +1,6 @@
 import '../../core/app_export.dart';
 import '../../theme/app_style.dart';
-import 'custom_image_view.dart';
+import 'my_widget/custom_image_view.dart';
 
 class CustomWorkStep extends StatelessWidget {
   CustomWorkStep(

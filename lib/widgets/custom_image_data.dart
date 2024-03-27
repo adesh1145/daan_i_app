@@ -2,7 +2,7 @@ import 'dart:io';
 import '../../../core/app_export.dart';
 import '../theme/app_decoration.dart';
 import '../theme/app_style.dart';
-import 'custom_image_view.dart';
+import 'my_widget/custom_image_view.dart';
 
 class CustomImageData extends StatelessWidget {
   CustomImageData({this.text, this.url, this.fileData, this.onTap});
@@ -41,7 +41,7 @@ class CustomImageData extends StatelessWidget {
                               text!,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
-                              style: AppStyle.montserrat12textTwo600,
+                              // style: AppStyle.montserrat12textTwo600,
                             ),
                           ),
                         ],

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../core/constants/constants.dart';
 import '../core/utils/image_constant.dart';
 import '../theme/app_style.dart';
-import 'custom_image_view.dart';
+import 'my_widget/custom_image_view.dart';
 
 // ignore: must_be_immutable
 class DataNotFound extends StatelessWidget {
@@ -69,7 +69,7 @@ class DataNotFound extends StatelessWidget {
                     textScaler: TextScaler.linear(Constants.factor),
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.left,
-                    style: AppStyle.montserrat12blue600,
+                    // style: AppStyle.montserrat12blue600,
                   ),
                 ),
               ),

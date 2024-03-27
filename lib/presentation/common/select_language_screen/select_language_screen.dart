@@ -1,5 +1,5 @@
 import 'package:daan_i_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:daan_i_app/widgets/custom_image_view.dart';
+import 'package:daan_i_app/widgets/my_widget/custom_image_view.dart';
 
 import '../../../../core/app_export.dart';
 import 'controller/select_language_controller.dart';
@@ -84,17 +84,12 @@ class SelectLanguageScreen extends GetWidget<SelectLanguageController> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
             child: CustomElevatedButtonWithIcon(
+              onTap: () => Get.toNamed(AppRoutes.loginScreen),
               suffixWidget: Icon(
                 Icons.chevron_right,
                 color: Theme.of(context).colorScheme.background,
               ),
               text: AppLocalizations.of(context)!.continueTxt,
-              textStyle: TextStyle(
-                fontSize: 16.sp,
-                color: Theme.of(context).colorScheme.background,
-              ),
-              borderRadius: BorderRadiusStyle.roundedBorder8,
-              backgroundColor: Theme.of(context).colorScheme.primary,
             ),
           ),
         ],

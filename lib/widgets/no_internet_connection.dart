@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../core/constants/constants.dart';
 import '../core/utils/image_constant.dart';
 import '../theme/app_style.dart';
-import 'custom_image_view.dart';
+import 'my_widget/custom_image_view.dart';
 
 class NoInternet extends StatelessWidget {
   @override
