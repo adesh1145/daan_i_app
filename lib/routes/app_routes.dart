@@ -4,14 +4,14 @@ import 'package:daan_i_app/presentation/common/otp_screen/binding/otp_binding.da
 import 'package:daan_i_app/presentation/common/otp_screen/otp_screen.dart';
 import 'package:daan_i_app/presentation/common/splash_screen/binding/splash_binding.dart';
 import 'package:daan_i_app/presentation/common/splash_screen/splash_screen.dart';
-import 'package:daan_i_app/presentation/customer/botton_navigation_bar/bottom_navigation_bar.dart';
-import 'package:daan_i_app/presentation/customer/signup_screen/binding/cust_signup_binding.dart';
-import 'package:daan_i_app/presentation/customer/signup_screen/cust_signup_screen.dart';
+import 'package:daan_i_app/presentation/donar_module/botton_navigation_bar/bottom_navigation_bar.dart';
+import 'package:daan_i_app/presentation/donar_module/signup_screen/binding/cust_signup_binding.dart';
+import 'package:daan_i_app/presentation/donar_module/signup_screen/cust_signup_screen.dart';
 import 'package:get/get.dart';
 
 import '../presentation/common/select_language_screen/binding/select_language_binding.dart';
 import '../presentation/common/select_language_screen/select_language_screen.dart';
-import '../presentation/customer/botton_navigation_bar/binding/bootom_navigation_bar_binding.dart';
+import '../presentation/donar_module/botton_navigation_bar/binding/bootom_navigation_bar_binding.dart';
 
 class AppRoutes {
   //! Conmmon Screen Name

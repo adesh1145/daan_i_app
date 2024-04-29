@@ -184,11 +184,11 @@ class AppStyle {
     color: Theme.of(Get.context!).colorScheme.background,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle roboto12Backgroundw500 = GoogleFonts.roboto(
-    fontSize: 12.sp,
-    color: Theme.of(Get.context!).colorScheme.background,
-    fontWeight: FontWeight.w500,
-  );
+  static TextStyle get roboto12Backgroundw500 => GoogleFonts.roboto(
+        fontSize: 12.sp,
+        color: Theme.of(Get.context!).colorScheme.background,
+        fontWeight: FontWeight.w500,
+      );
   static TextStyle roboto12Backgroundw400 = GoogleFonts.roboto(
     fontSize: 12.sp,
     color: Theme.of(Get.context!).colorScheme.background,

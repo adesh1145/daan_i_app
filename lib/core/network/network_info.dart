@@ -1,64 +1,64 @@
-// ignore_for_file: unnecessary_import
+// // ignore_for_file: unnecessary_import
 
-import 'package:connectivity_plus/connectivity_plus.dart';
+// import 'package:connectivity_plus/connectivity_plus.dart';
 
-import '../app_export.dart';
-import '../utils/snack_bar.dart';
+// import '../app_export.dart';
+// import '../utils/snack_bar.dart';
 
-// For checking internet connectivity
-abstract class NetworkInfoI {
-  Future<bool> isConnected();
+// // For checking internet connectivity
+// abstract class NetworkInfoI {
+//   Future<bool> isConnected();
 
-  Future<ConnectivityResult> get connectivityResult;
+//   Future<ConnectivityResult> get connectivityResult;
 
-  Stream<ConnectivityResult> get onConnectivityChanged;
-}
+//   Stream<ConnectivityResult> get onConnectivityChanged;
+// }
 
-class NetworkInfo implements NetworkInfoI {
-  Connectivity connectivity;
+// class NetworkInfo implements NetworkInfoI {
+//   Connectivity connectivity;
 
-  NetworkInfo(this.connectivity) {
-    connectivity = this.connectivity;
-  }
+//   NetworkInfo(this.connectivity) {
+//     connectivity = this.connectivity;
+//   }
 
-  @override
-  Future<bool> isConnected() async {
-    final result = await connectivity.checkConnectivity();
-    if (result != ConnectivityResult.none) {
-      return true;
-    }
-    return false;
-  }
+//   @override
+//   Future<bool> isConnected() async {
+//     final result = await connectivity.checkConnectivity();
+//     if (result != ConnectivityResult.none) {
+//       return true;
+//     }
+//     return false;
+//   }
 
-  // to check type of internet connectivity
-  @override
-  Future<ConnectivityResult> get connectivityResult async {
-    return connectivity.checkConnectivity();
-  }
+//   // to check type of internet connectivity
+//   @override
+//   Future<ConnectivityResult> get connectivityResult async {
+//     return connectivity.checkConnectivity();
+//   }
 
-  //check the type on internet connection on changed of internet connection
-  @override
-  Stream<ConnectivityResult> get onConnectivityChanged =>
-      connectivity.onConnectivityChanged;
-}
+//   //check the type on internet connection on changed of internet connection
+//   @override
+//   Stream<ConnectivityResult> get onConnectivityChanged =>
+//       connectivity.onConnectivityChanged;
+// }
 
-class NetworkStatusService extends GetxService {
-  NetworkStatusService() {
-    Connectivity().onConnectivityChanged.listen(
-      (status) async {
-        _getNetworkStatus(status);
-      },
-    );
-  }
-  void _getNetworkStatus(ConnectivityResult status) {
-    if (status == ConnectivityResult.mobile ||
-        status == ConnectivityResult.wifi ||
-        status == ConnectivityResult.ethernet ||
-        status == ConnectivityResult.vpn) {
-      // CustomSnackBar("Back Online, Internet connected", "S");
-    } else {
-      customSnackBar("Lost the connection, No Internet Connection",
-          msgType: MsgType.error);
-    }
-  }
-}
+// class NetworkStatusService extends GetxService {
+//   NetworkStatusService() {
+//     Connectivity().onConnectivityChanged.listen(
+//       (status) async {
+//         _getNetworkStatus(status);
+//       },
+//     );
+//   }
+//   void _getNetworkStatus(ConnectivityResult status) {
+//     if (status == ConnectivityResult.mobile ||
+//         status == ConnectivityResult.wifi ||
+//         status == ConnectivityResult.ethernet ||
+//         status == ConnectivityResult.vpn) {
+//       // CustomSnackBar("Back Online, Internet connected", "S");
+//     } else {
+//       customSnackBar("Lost the connection, No Internet Connection",
+//           msgType: MsgType.error);
+//     }
+//   }
+// }

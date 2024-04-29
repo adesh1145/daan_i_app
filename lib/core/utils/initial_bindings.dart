@@ -8,6 +8,6 @@ class InitialBindings extends Bindings {
   void dependencies() {
     Get.put(ApiClient());
     Connectivity connectivity = Connectivity();
-    Get.put(NetworkInfo(connectivity));
+    // Get.put(NetworkInfo(connectivity));
   }
 }
