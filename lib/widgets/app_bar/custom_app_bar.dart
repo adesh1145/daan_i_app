@@ -48,7 +48,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: titleWidget ??
           CustomText(
             tittle,
-            style: titleStyle,
+            style: titleStyle??AppStyle.roboto14w500,
           ),
       centerTitle: centerTitle ?? false,
       actions: actions,

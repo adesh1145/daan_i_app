@@ -1,5 +1,5 @@
 import 'package:daan_i_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:daan_i_app/widgets/custom_text_form_field.dart';
+import 'package:daan_i_app/widgets/my_widget/custom_text_form_field.dart';
 import 'package:daan_i_app/widgets/my_widget/custom_image_view.dart';
 
 import 'package:animated_text_kit/animated_text_kit.dart';

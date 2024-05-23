@@ -37,4 +37,12 @@ class ColorConstant {
 
   // ! My App COlor
   static const success = Color(0xFF42A646);
+
+  //! some extra color use ---
+
+ static const ligtPink=Color.fromARGB(255, 241, 230, 244);
+ static const ligtYellow=Color.fromARGB(255, 226, 230, 173);
+ static const ligtBrown=Color.fromARGB(255, 250, 207, 176);
+ static const ligtGreen=Color.fromARGB(255, 200, 244, 206);
+
 }

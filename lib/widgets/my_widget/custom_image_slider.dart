@@ -97,7 +97,7 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: EdgeInsets.only(right: 16.w),
+                  padding: EdgeInsets.only(right: 10.w,left: 10.w),
                   child: ClipRRect(
                       borderRadius:
                           BorderRadius.circular(widget.radius ?? 12.r),
@@ -137,21 +137,22 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
       for (var index = 0; index < length; index++)
         Container(
           margin: EdgeInsets.only(left: 4.w, right: 4.w),
-          child: bannerSectionNumer == index
+          child: bannerSectionNumer.value == index
               ? Container(
-                  // decoration: AppDecoration.fillbgGrey.copyWith(
-                  //     borderRadius: BorderRadiusStyle.roundedBorder12),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.scrim,
+                      borderRadius: BorderRadiusStyle.roundedBorder12),
                   padding: EdgeInsets.only(
                       left: 8.w, right: 8.w, top: 0.5.h, bottom: 0.5.h),
                   child: Text(
                     "${index + 1}/${bannerLength.value}",
                     textScaler: TextScaler.linear(Constants.factor),
-                    style: AppStyle.montserrat10White600,
+                    style: AppStyle.roboto10w600.copyWith(color: Colors.white),
                   ),
                 )
               : CircleAvatar(
                   radius: 4.r,
-                  backgroundColor: ColorConstant.outlineStroke,
+                  backgroundColor: Theme.of(context).colorScheme.outline,
                 ),
         )
     ];
