@@ -24,3 +24,4 @@ export '../theme/text_scaler.dart';
 export '../widgets/my_widget/custom_button.dart';
 export '../widgets/my_widget/custom_text.dart';
 export '../localization/app_localizations.dart';
+export '../../../../core/utils/snack_bar.dart';

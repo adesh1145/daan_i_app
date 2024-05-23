@@ -107,8 +107,7 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
                             ? null
                             : () {},
                         child: CustomImageView(
-                          url: UrlConstants.imageUrl +
-                              widget.bannerImageList[index].imgUrl.toString(),
+                          url: widget.bannerImageList[index].imgUrl.toString(),
                           // svgPath: widget.bannerImageList[index],
                           height: widget.height ?? 170.h,
                           fit: BoxFit.fill,

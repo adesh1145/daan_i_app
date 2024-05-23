@@ -51,9 +51,7 @@ class CustomImageData extends StatelessWidget {
                       // decoration: AppDecoration.outlineGray30001.copyWith(
                       //   borderRadius: BorderRadiusStyle.roundedBorder6,
                       // ),
-                      child: CustomImageView(
-                          url: UrlConstants.imageUrl + "" + url!,
-                          fit: BoxFit.fill),
+                      child: CustomImageView(url: url!, fit: BoxFit.fill),
                     ),
         ),
       ),
