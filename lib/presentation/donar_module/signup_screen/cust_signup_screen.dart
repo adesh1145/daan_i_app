@@ -1,9 +1,9 @@
-import 'package:daan_i_app/widgets/custom_text_form_field.dart';
 import 'package:daan_i_app/widgets/my_widget/custom_image_view.dart';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:daan_i_app/widgets/my_widget/custom_loader.dart';
 import '../../../../core/app_export.dart';
+import '../../../widgets/my_widget/custom_text_form_field.dart';
 import 'controller/cust_signup_controller.dart';
 
 class CustSignUpScreen extends GetWidget<CustSignUpController> {
@@ -55,7 +55,7 @@ class CustSignUpScreen extends GetWidget<CustSignUpController> {
                       child: SingleChildScrollView(
                         child: Column(children: [
                           AnimatedTextKit(
-                            totalRepeatCount: 200,
+                            repeatForever: true,
                             isRepeatingAnimation: true,
                             animatedTexts: [
                               TyperAnimatedText("Welcome Daan-i",

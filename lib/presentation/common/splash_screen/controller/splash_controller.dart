@@ -10,16 +10,21 @@ import '../../../../core/app_export.dart';
 class SplashController extends GetxController {
   @override
   void onInit() {
+    Future.delayed(const Duration(seconds: 3), () async {
+      print(AppStorage.getToken);
+      var token = AppStorage.getToken;
+      if (token == null || token == '') {
+        Get.offAllNamed(AppRoutes.selectLanguageScreen);
+      } else {
+        print("Else$token");
+        Get.offNamed(AppRoutes.custBottomNavigation);
+      }
+    });
     super.onInit();
   }
 
   @override
   Future<void> onReady() async {
-    Future.delayed(const Duration(seconds: 3), () async {
-      AppStorage.getToken == null || AppStorage.getToken == ''
-          ? Get.offAllNamed(AppRoutes.loginScreen)
-          : Get.offNamed(AppRoutes.custBottomNavigation);
-    });
     super.onReady();
   }
 

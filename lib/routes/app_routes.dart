@@ -12,6 +12,7 @@ import 'package:get/get.dart';
 import '../presentation/common/select_language_screen/binding/select_language_binding.dart';
 import '../presentation/common/select_language_screen/select_language_screen.dart';
 import '../presentation/donar_module/botton_navigation_bar/binding/bootom_navigation_bar_binding.dart';
+import '../presentation/donar_module/cust_profile_tab_screen/edit_profile_screen.dart';
 
 class AppRoutes {
   //! Conmmon Screen Name
@@ -24,6 +25,7 @@ class AppRoutes {
   //! Customer Screen Name
   static const String custSignUpScreen = '/custSignUpScreen';
   static const String custBottomNavigation = '/custBottomNavigation';
+  static const String custEditProfileScreen = '/custEditProfileScreen';
 
   static List<GetPage> pages = [
     //! Common Screen
@@ -71,6 +73,10 @@ class AppRoutes {
       bindings: [
         CustBottomNavigationBarBinding(),
       ],
+    ),
+    GetPage(
+      name: custEditProfileScreen,
+      page: () => CustProfileTabEditProfileScreen(),
     ),
 
     //! NGO Screen

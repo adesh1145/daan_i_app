@@ -56,7 +56,7 @@ class OtpController extends GetxController {
       if (value?.data['status'] == true) {
         customSnackBar(value?.data['msg'], msgType: MsgType.success);
         AppStorage.setToken(
-            value?.data['response']['accessToken'].toString() ?? "");
+            value?.data['response']['token']['accessToken'].toString() ?? "");
         Get.offAllNamed(
           AppRoutes.custBottomNavigation,
         );

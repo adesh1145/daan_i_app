@@ -1,9 +1,9 @@
-import 'package:daan_i_app/widgets/custom_text_form_field.dart';
 import 'package:daan_i_app/widgets/my_widget/custom_image_view.dart';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../../../core/app_export.dart';
 import '../../../widgets/my_widget/custom_loader.dart';
+import '../../../widgets/my_widget/custom_text_form_field.dart';
 import 'controller/login_controller.dart';
 
 class LoginScreen extends GetWidget<LoginController> {
@@ -69,7 +69,7 @@ class LoginScreen extends GetWidget<LoginController> {
                             ],
                           ),
                           AnimatedTextKit(
-                            totalRepeatCount: 200,
+                            repeatForever: true,
                             isRepeatingAnimation: true,
                             animatedTexts: [
                               TyperAnimatedText("Welcome Daan-i",

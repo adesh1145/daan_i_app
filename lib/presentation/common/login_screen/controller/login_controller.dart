@@ -2,6 +2,7 @@ import 'package:daan_i_app/core/utils/snack_bar.dart';
 import 'package:daan_i_app/data/network/network_api_services.dart';
 
 import '../../../../../core/app_export.dart';
+import '../../../../core/utils/logger.dart';
 import '../../../../core/utils/pref_utils.dart';
 
 class LoginController extends GetxController
@@ -27,12 +28,12 @@ class LoginController extends GetxController
               "password": passController.value.text
             },
             isSetToken: false)
-        .then((value) {
+        .then((value) async {
       if (value?.data['status'] == true) {
         customSnackBar(value?.data['msg'], msgType: MsgType.success);
         if (value?.data['response']['isVerify'] == true) {
-          AppStorage.setToken(
-              value?.data['response']['accessToken'].toString() ?? "");
+          await AppStorage.setToken(
+              value?.data['response']['token']['accessToken'] ?? "");
           Get.offAllNamed(
             AppRoutes.custBottomNavigation,
           );
@@ -55,6 +56,7 @@ class LoginController extends GetxController
     }).onError((error, stackTrace) {
       isLoading(false);
       customSnackBar("SomeThing Wents Wrong", msgType: MsgType.error);
+      Logger.logPrint(error.toString(), stackTrace: stackTrace);
     });
   }
 }

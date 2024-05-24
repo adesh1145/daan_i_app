@@ -17,7 +17,6 @@ class NetworkApiService extends GetxService {
   final Map<String, String> header = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
-    'Authorization': 'Bearer ${AppStorage.getToken}',
   };
 
   @override
@@ -35,13 +34,16 @@ class NetworkApiService extends GetxService {
     // required Map<String, int> body
   }) async {
     try {
+      header.addAll({
+        'Authorization': 'Bearer ${AppStorage.getToken}',
+      });
       Logger.logPrint("==========GET API ======");
-      Logger.logPrint("URL---> ${UrlConstants.baseUrl}$url");
+      Logger.logPrint("URL---> ${UrlConstants.apiUrl}$url");
       Logger.logPrint("QUERY---> $query");
       Logger.logPrint("HEADER---> $header");
 
       Dio.Response response = await dio.get(
-        UrlConstants.baseUrl + url,
+        UrlConstants.apiUrl + url,
         queryParameters: query,
         options: Dio.Options(headers: header),
       );
@@ -73,13 +75,16 @@ class NetworkApiService extends GetxService {
       Map<String, dynamic>? query,
       bool isverifyStatusCode = true}) async {
     try {
+      header.addAll({
+        'Authorization': 'Bearer ${AppStorage.getToken}',
+      });
       Logger.logPrint("==========GET API ======");
-      Logger.logPrint("URL---> ${UrlConstants.baseUrl}$url");
+      Logger.logPrint("URL---> ${UrlConstants.apiUrl}$url");
       Logger.logPrint("QUERY---> $query");
       Logger.logPrint("HEADER---> $header");
 
       Dio.Response response = await dio.delete(
-        UrlConstants.baseUrl + url,
+        UrlConstants.apiUrl + url,
         queryParameters: query,
         options: Dio.Options(headers: header),
       );
@@ -110,14 +115,16 @@ class NetworkApiService extends GetxService {
       Map<String, String>? headers,
       bool isSetToken = true,
       bool isverifyStatusCode = true}) async {
-    print(headers);
-    print(header);
+    print(AppStorage.getToken);
+    await AppStorage.setToken('MITA');
+    print(AppStorage.getToken);
+    header.addAll({
+      'Authorization': 'Bearer ${AppStorage.getToken}',
+    });
     isSetToken == false ? header.remove('Authorization') : null;
-    print(headers);
-    print(header);
     FocusScope.of(Get.context!).unfocus();
     Logger.logPrint("==========POST API ======");
-    Logger.logPrint("URL---> ${UrlConstants.baseUrl}$url");
+    Logger.logPrint("URL---> ${UrlConstants.apiUrl}$url");
     Logger.logPrint("QUERY---> $query");
     Logger.logPrint("HEADER---> ${headers ?? header}");
 
@@ -125,7 +132,7 @@ class NetworkApiService extends GetxService {
 
     try {
       Dio.Response response = await dio.post(
-        UrlConstants.baseUrl + url,
+        UrlConstants.apiUrl + url,
         queryParameters: query,
         data: body,
         options: Dio.Options(headers: headers ?? header),
@@ -157,14 +164,17 @@ class NetworkApiService extends GetxService {
       Map<String, dynamic>? query,
       bool isverifyStatusCode = true}) async {
     FocusScope.of(Get.context!).unfocus();
+    header.addAll({
+      'Authorization': 'Bearer ${AppStorage.getToken}',
+    });
     Logger.logPrint("==========POST API ======");
-    Logger.logPrint("URL---> ${UrlConstants.baseUrl}$url");
+    Logger.logPrint("URL---> ${UrlConstants.apiUrl}$url");
     Logger.logPrint("QUERY---> $query");
     Logger.logPrint("HEADER---> $header");
     Logger.logPrint("BODY---> $body");
     try {
       Dio.Response response = await dio.put(
-        UrlConstants.baseUrl + url,
+        UrlConstants.apiUrl + url,
         queryParameters: query,
         data: body,
         options: Dio.Options(headers: header),
@@ -202,13 +212,60 @@ class NetworkApiService extends GetxService {
 
     try {
       Logger.logPrint("========== POST API with MultiPart ======");
-      Logger.logPrint("URL---> ${UrlConstants.baseUrl}$url");
+      Logger.logPrint("URL---> ${UrlConstants.apiUrl}$url");
       Logger.logPrint("QUERY---> $query");
       Logger.logPrint("HEADER---> $header");
       Logger.logPrint("BODY Feilds---> ${body != null ? body.fields : ""}");
       Logger.logPrint("BODY Files---> ${body != null ? body.files : ""}");
       Dio.Response response = await dio.post(
-        UrlConstants.baseUrl + url,
+        UrlConstants.apiUrl + url,
+        queryParameters: query,
+        data: body,
+        options: Dio.Options(
+          headers: header,
+          contentType: "*/*",
+        ),
+      );
+      Logger.logPrint("Status Code---> ${response.statusCode}");
+      Logger.logPrint("RESPONSE---> ${response.data}");
+      return isverifyStatusCode ? returnResponse(response: response) : response;
+    } on SocketException {
+      customSnackBar("Check your internet connection", msgType: MsgType.error);
+    } on Dio.DioException catch (e) {
+      if (e.response != null) {
+        Logger.logPrint("Status Code---> ${e.response!.statusCode}");
+        Logger.logPrint("RESPONSE---> ${e.response!.data}");
+        return isverifyStatusCode
+            ? returnResponse(response: e.response!)
+            : e.response!;
+      } else {
+        customSnackBar("Error :$e", msgType: MsgType.error);
+        throw e.toString();
+      }
+    }
+    return null;
+  }
+
+  Future<Dio.Response?> putMultipartApi(
+      {required String url,
+      Dio.FormData? body,
+      Map<String, dynamic>? query,
+      bool isverifyStatusCode = true}) async {
+    FocusScope.of(Get.context!).unfocus();
+    var header = {
+      'Accept': '*/*',
+      'Authorization': 'Bearer  ${AppStorage.getToken}',
+    };
+
+    try {
+      Logger.logPrint("========== POST API with MultiPart ======");
+      Logger.logPrint("URL---> ${UrlConstants.apiUrl}$url");
+      Logger.logPrint("QUERY---> $query");
+      Logger.logPrint("HEADER---> $header");
+      Logger.logPrint("BODY Feilds---> ${body != null ? body.fields : ""}");
+      Logger.logPrint("BODY Files---> ${body != null ? body.files : ""}");
+      Dio.Response response = await dio.put(
+        UrlConstants.apiUrl + url,
         queryParameters: query,
         data: body,
         options: Dio.Options(

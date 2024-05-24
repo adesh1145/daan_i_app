@@ -1,3 +1,5 @@
+import 'package:daan_i_app/widgets/my_widget/custom_image_view.dart';
+
 import '../../../core/app_export.dart';
 import 'controller/splash_controller.dart';
 
@@ -9,13 +11,11 @@ class SplashScreen extends GetWidget<SplashController> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(ImageConstant.splash),
-              fit: BoxFit.cover,
+          child: Center(
+            child: CustomImageView(
+              imagePath: ImageConstant.appLogo,
             ),
-          ),
-          child: null /* add child content here */,
+          ) /* add child content here */,
         ),
       ),
     );

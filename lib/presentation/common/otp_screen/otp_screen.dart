@@ -1,7 +1,6 @@
 import 'package:daan_i_app/widgets/app_bar/custom_app_bar.dart';
 
 import '../../../core/app_export.dart';
-import '../../../widgets/custom_button_bottom.dart';
 import '../../../widgets/my_widget/custom_image_view.dart';
 import 'controller/otp_controller.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';

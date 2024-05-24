@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../core/utils/image_constant.dart';
+
 class CustomImageView extends StatelessWidget {
   ///[url] is required parameter for fetching network image
   String? url;
@@ -49,7 +51,7 @@ class CustomImageView extends StatelessWidget {
     this.radius,
     this.margin,
     this.border,
-    this.placeHolder = 'assets/images/image_not_found.png',
+    this.placeHolder = 'assets/images/logo.jpeg',
   });
 
   @override
@@ -76,7 +78,7 @@ class CustomImageView extends StatelessWidget {
   _buildCircleImage() {
     if (radius != null) {
       return ClipRRect(
-        borderRadius: BorderRadius.circular(0),
+        borderRadius: radius ?? BorderRadius.circular(0),
         child: _buildImageWithBorder(),
       );
     } else {
@@ -100,6 +102,7 @@ class CustomImageView extends StatelessWidget {
   }
 
   Widget _buildImageView() {
+    print(url);
     if (svgPath != null && svgPath!.isNotEmpty) {
       return Container(
         height: height,
@@ -119,6 +122,8 @@ class CustomImageView extends StatelessWidget {
         file!,
         fit: fit ?? BoxFit.cover,
         color: color,
+        height: height,
+        width: width,
       );
     } else if (url != null && url!.isNotEmpty) {
       return CachedNetworkImage(

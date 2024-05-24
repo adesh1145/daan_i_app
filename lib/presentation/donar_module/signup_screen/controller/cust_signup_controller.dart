@@ -1,4 +1,5 @@
 import '../../../../../core/app_export.dart';
+import '../../../../core/utils/logger.dart';
 import '../../../../data/network/network_api_services.dart';
 
 class CustSignUpController extends GetxController {
@@ -18,7 +19,7 @@ class CustSignUpController extends GetxController {
     isLoading(true);
     NetworkApiService()
         .postApi(
-            url: UrlConstants.donarSignUrl,
+            url: UrlConstants.donarSignUpUrl,
             body: {
               "email": emailController.value.text,
               "password": passController.value.text,
@@ -40,6 +41,7 @@ class CustSignUpController extends GetxController {
     }).onError((error, stackTrace) {
       isLoading(false);
       customSnackBar("SomeThing Wents Wrong", msgType: MsgType.error);
+      Logger.logPrint(error.toString(), stackTrace: stackTrace);
     });
   }
 }

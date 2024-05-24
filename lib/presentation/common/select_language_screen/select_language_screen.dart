@@ -84,7 +84,9 @@ class SelectLanguageScreen extends GetWidget<SelectLanguageController> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
             child: CustomElevatedButtonWithIcon(
-              onTap: () => Get.toNamed(AppRoutes.loginScreen),
+              onTap: () => controller.isLogin == true
+                  ? Get.back()
+                  : Get.toNamed(AppRoutes.loginScreen),
               suffixWidget: Icon(
                 Icons.chevron_right,
                 color: Theme.of(context).colorScheme.background,

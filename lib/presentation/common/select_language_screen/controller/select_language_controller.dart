@@ -2,6 +2,7 @@ import '../../../../../core/app_export.dart';
 
 class SelectLanguageController extends GetxController {
   RxBool loading = false.obs;
+  final isLogin = Get.arguments;
   RxList<LanguageModel> languageList = <LanguageModel>[
     LanguageModel(
         title: AppLocalizations.of(Get.context!)!.english,

@@ -2,6 +2,8 @@ import 'dart:io';
 import 'package:daan_i_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import '../../../core/app_export.dart';
+import '../cust_profile_tab_screen/cust_profile_tab_screen.dart';
+import '../home_screen/home_screen.dart';
 import 'controller/bottom_navigation_bar_controller.dart';
 
 class CustBottomNavigation extends StatelessWidget {
@@ -10,6 +12,7 @@ class CustBottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<CustBottomNavigationBarController>(
+      init: CustBottomNavigationBarController(),
       builder: (controller) {
         return Obx(() => PopScope(
               canPop: false,
@@ -47,6 +50,7 @@ class CustBottomNavigation extends StatelessWidget {
                 body: IndexedStack(
                   index: controller.tabIndex.value,
                   children: [
+                    HomeScreen(),
                     Container(
                       child: Center(
                         child: CustomText("Work In Progress !"),
@@ -57,16 +61,7 @@ class CustBottomNavigation extends StatelessWidget {
                         child: CustomText("Work In Progress !"),
                       ),
                     ),
-                    Container(
-                      child: Center(
-                        child: CustomText("Work In Progress !"),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: CustomText("Work In Progress !"),
-                      ),
-                    ),
+                    const CustProfileTabScreen()
                   ],
                 ),
                 bottomNavigationBar: SalomonBottomBar(
