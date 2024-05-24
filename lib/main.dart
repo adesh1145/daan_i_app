@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
             fallbackLocale: const Locale('en', 'US'),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             title: 'Daan-i',
-            initialRoute: AppRoutes.selectLanguageScreen,
+            initialRoute: AppRoutes.splashScreen,
             getPages: AppRoutes.pages,
             // home: const MyHomePage(title: 'Daan-i Home Page'),
           ),

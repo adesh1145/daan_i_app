@@ -2,6 +2,7 @@
 
 import 'dart:async';
 import 'dart:io';
+import 'package:daan_i_app/core/utils/pref_utils.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import '../../../../core/app_export.dart';
@@ -14,8 +15,10 @@ class SplashController extends GetxController {
 
   @override
   Future<void> onReady() async {
-    Future.delayed(const Duration(milliseconds: 5000), () async {
-      Get.offAllNamed(AppRoutes.loginScreen);
+    Future.delayed(const Duration(seconds: 3), () async {
+      AppStorage.getToken == null || AppStorage.getToken == ''
+          ? Get.offAllNamed(AppRoutes.loginScreen)
+          : Get.offNamed(AppRoutes.custBottomNavigation);
     });
     super.onReady();
   }

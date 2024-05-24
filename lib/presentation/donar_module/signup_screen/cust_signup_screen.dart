@@ -50,7 +50,8 @@ class CustSignUpScreen extends GetWidget<CustSignUpController> {
                           topRight: Radius.circular(20.r)),
                     ),
                     child: Form(
-                      key: controller.formKey,
+                      key: controller.signupFormKey,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
                       child: SingleChildScrollView(
                         child: Column(children: [
                           AnimatedTextKit(
@@ -112,6 +113,26 @@ class CustSignUpScreen extends GetWidget<CustSignUpController> {
                             height: 12.h,
                           ),
                           CustomTextFormField(
+                            prefixIcon: const Icon(Icons.phone),
+                            hintText: " Enter Number",
+                            labelText: "Number",
+                            controller: controller.mobileController.value,
+                            keyboardType: TextInputType.number,
+                            inputFormatters: [
+                              FilteringTextInputFormatter.digitsOnly,
+                              LengthLimitingTextInputFormatter(10)
+                            ],
+                            textInputAction: TextInputAction.next,
+                            onEditingComplete: () {},
+                            validator: (p0) =>
+                                p0 != null && (p0.isEmpty || p0.length != 10)
+                                    ? "Please Enter 10 Digit Mobile Number"
+                                    : null,
+                          ),
+                          SizedBox(
+                            height: 12.h,
+                          ),
+                          CustomTextFormField(
                             prefixIcon: const Icon(Icons.person),
                             hintText: " Enter Full Name",
                             labelText: "Name",
@@ -147,9 +168,9 @@ class CustSignUpScreen extends GetWidget<CustSignUpController> {
                             hintText: " Enter Confirm Password",
                             labelText: "Confirm Password",
                             isPassword: true,
-                            controller: controller.passController.value,
+                            controller: controller.confirmPassController.value,
                             keyboardType: TextInputType.visiblePassword,
-                            textInputAction: TextInputAction.next,
+                            textInputAction: TextInputAction.done,
                             onEditingComplete: () {},
                             validator: (p0) => p0 != null && p0.isEmpty
                                 ? "Please Enter Password"
@@ -164,7 +185,8 @@ class CustSignUpScreen extends GetWidget<CustSignUpController> {
                             text: "Sign Up",
                             padding: EdgeInsets.symmetric(vertical: 10.h),
                             onTap: () {
-                              if (controller.formKey.currentState?.validate() ??
+                              if (controller.signupFormKey.currentState
+                                      ?.validate() ??
                                   false) {
                                 controller.donarSignUpApi();
                               }

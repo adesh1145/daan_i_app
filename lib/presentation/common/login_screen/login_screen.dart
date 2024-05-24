@@ -50,7 +50,7 @@ class LoginScreen extends GetWidget<LoginController> {
                           topRight: Radius.circular(20.r)),
                     ),
                     child: Form(
-                      key: controller.formKey,
+                      key: controller.loginFormKey,
                       child: SingleChildScrollView(
                         child: Column(children: [
                           TabBar(
@@ -121,7 +121,8 @@ class LoginScreen extends GetWidget<LoginController> {
                             text: "Log in",
                             padding: EdgeInsets.symmetric(vertical: 10.h),
                             onTap: () {
-                              if (controller.formKey.currentState?.validate() ??
+                              if (controller.loginFormKey.currentState
+                                      ?.validate() ??
                                   false) {
                                 controller.donarLoginApi();
                               }

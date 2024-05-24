@@ -11,7 +11,7 @@ class OtpScreen extends GetWidget<OtpController> {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => controller.loading.value
+      () => controller.isLoading.value
           ? const Center(child: CircularProgressIndicator())
           : Scaffold(
               appBar: const CustomAppBar(
@@ -19,7 +19,7 @@ class OtpScreen extends GetWidget<OtpController> {
                 isBackBtnVisible: false,
               ),
               body: Form(
-                key: controller.formKey,
+                key: controller.otpFormKey,
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   width: double.maxFinite,
@@ -54,7 +54,7 @@ class OtpScreen extends GetWidget<OtpController> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     CustomText(
-                                        "+91 ${controller.argumentData['mobile']}  ",
+                                        " ${controller.argumentData['email']}  ",
                                         style: AppStyle.roboto12w400),
                                     InkWell(
                                       onTap: () => Get.back(),
@@ -87,7 +87,7 @@ class OtpScreen extends GetWidget<OtpController> {
                             length: 4,
                             blinkWhenObscuring: true,
                             autoFocus: true,
-                            autoDisposeControllers: true,
+                            autoDisposeControllers: false,
                             enablePinAutofill: true,
                             obscureText: false,
                             obscuringCharacter: '*',
@@ -220,8 +220,16 @@ class OtpScreen extends GetWidget<OtpController> {
                         const Spacer(),
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 16.h),
-                          child: const CustomElevatedButton(
+                          child: CustomElevatedButton(
                             text: "Verify",
+                            onTap: () {
+                              if (controller.otpController.value.text.length ==
+                                  4) {
+                                controller.verfyOtpApi();
+                              } else {
+                                customSnackBar("Enter 4 Digit OTP");
+                              }
+                            },
                           ),
                         ),
                       ]),

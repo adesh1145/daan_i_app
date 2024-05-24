@@ -7,20 +7,23 @@ class CustSignUpController extends GetxController {
 
   final Rx<TextEditingController> emailController = TextEditingController().obs;
   final Rx<TextEditingController> nameController = TextEditingController().obs;
+  final Rx<TextEditingController> mobileController =
+      TextEditingController().obs;
   final Rx<TextEditingController> passController = TextEditingController().obs;
   final Rx<TextEditingController> confirmPassController =
       TextEditingController().obs;
-  final formKey = GlobalKey<FormState>();
+  final signupFormKey = GlobalKey<FormState>();
 
   void donarSignUpApi() {
     isLoading(true);
     NetworkApiService()
         .postApi(
             url: UrlConstants.donarSignUrl,
-            data: {
+            body: {
               "email": emailController.value.text,
               "password": passController.value.text,
               "name": nameController.value.text,
+              'mobile': mobileController.value.text
             },
             isSetToken: false)
         .then((value) {
@@ -28,8 +31,7 @@ class CustSignUpController extends GetxController {
         customSnackBar(value?.data['msg'], msgType: MsgType.success);
 
         Get.toNamed(AppRoutes.otpScreen,
-            arguments: {'mobile': emailController.value.text});
-        Get.offAllNamed(AppRoutes.custBottomNavigation);
+            arguments: {'email': emailController.value.text});
       } else {
         // print(value?.data);
         customSnackBar(value?.data['msg'], msgType: MsgType.error);

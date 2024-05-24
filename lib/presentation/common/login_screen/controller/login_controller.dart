@@ -2,6 +2,7 @@ import 'package:daan_i_app/core/utils/snack_bar.dart';
 import 'package:daan_i_app/data/network/network_api_services.dart';
 
 import '../../../../../core/app_export.dart';
+import '../../../../core/utils/pref_utils.dart';
 
 class LoginController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -9,7 +10,7 @@ class LoginController extends GetxController
   late TabController tabController;
   final Rx<TextEditingController> emailController = TextEditingController().obs;
   final Rx<TextEditingController> passController = TextEditingController().obs;
-  final formKey = GlobalKey<FormState>();
+  final loginFormKey = GlobalKey<FormState>();
   @override
   void onInit() {
     tabController = TabController(length: 2, vsync: this);
@@ -21,7 +22,7 @@ class LoginController extends GetxController
     NetworkApiService()
         .postApi(
             url: UrlConstants.donarLoginUrl,
-            data: {
+            body: {
               "email": emailController.value.text,
               "password": passController.value.text
             },
@@ -29,10 +30,26 @@ class LoginController extends GetxController
         .then((value) {
       if (value?.data['status'] == true) {
         customSnackBar(value?.data['msg'], msgType: MsgType.success);
-        Get.offAllNamed(AppRoutes.custBottomNavigation);
+        if (value?.data['response']['isVerify'] == true) {
+          AppStorage.setToken(
+              value?.data['response']['accessToken'].toString() ?? "");
+          Get.offAllNamed(
+            AppRoutes.custBottomNavigation,
+          );
+        } else {
+          Get.toNamed(AppRoutes.otpScreen,
+              arguments: {'email': emailController.value.text});
+        }
       } else {
+        if (value?.data['response']['isVerify'] == false) {
+          customSnackBar("Otp Has Been Sent at email",
+              msgType: MsgType.success);
+          Get.toNamed(AppRoutes.otpScreen,
+              arguments: {'email': emailController.value.text});
+        } else {
+          customSnackBar(value?.data['msg'], msgType: MsgType.error);
+        }
         // print(value?.data);
-        customSnackBar(value?.data['msg'], msgType: MsgType.error);
       }
       isLoading(false);
     }).onError((error, stackTrace) {

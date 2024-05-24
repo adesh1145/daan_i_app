@@ -4,4 +4,5 @@ class UrlConstants {
 
   static const donarLoginUrl = "donar/login";
   static const donarSignUrl = "donar/signup";
+  static const otpVerifyUrl = "donar/otpVerify";
 }
