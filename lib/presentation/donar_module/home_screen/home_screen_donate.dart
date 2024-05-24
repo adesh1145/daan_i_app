@@ -14,7 +14,7 @@ class HomeDonateScreen extends GetWidget<HomeScreenTabController> {
   final List<String> donateCategory = [
     "Food",
     "Clothes",
-    "Vegetables",
+    "Money",
     "Others",
   ];
 
@@ -49,7 +49,6 @@ class HomeDonateScreen extends GetWidget<HomeScreenTabController> {
                   isExpanded: true,
                   value: selecteCategory,
                   hint: Text("Select Category"),
-                  
                   items: donateCategory.map((e) {
                     return DropdownMenuItem<String>(
                       value: e,
@@ -59,6 +58,7 @@ class HomeDonateScreen extends GetWidget<HomeScreenTabController> {
                   ).toList(), 
                   onChanged: (v){
                     selecteCategory=v;
+                    
                   }
                   ),
               ),

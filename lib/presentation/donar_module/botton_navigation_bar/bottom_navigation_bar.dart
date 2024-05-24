@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:daan_i_app/presentation/donar_module/history_screen/history-screen.dart';
 import 'package:daan_i_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import '../../../core/app_export.dart';
@@ -50,11 +51,7 @@ class CustBottomNavigation extends StatelessWidget {
                   index: controller.tabIndex.value,
                   children: [
                     HomeScreen(),
-                    Container(
-                      child: Center(
-                        child: CustomText("Work In Progress !"),
-                      ),
-                    ),
+                    HistoryScreen(),
                     Container(
                       child: Center(
                         child: CustomText("Work In Progress !"),

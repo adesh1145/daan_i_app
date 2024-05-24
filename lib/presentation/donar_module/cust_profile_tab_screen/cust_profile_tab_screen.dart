@@ -52,12 +52,12 @@ class CustProfileTabScreen extends GetWidget<CustProfileTabController> {
           ),
         ),
     
-       const Column(
-          children: [
-            Text("Shivam Kumar"),
-            Text("9696599965")
-          ],
-        ),
+      //  const Column(
+      //     children: [
+      //       Text("Shivam Kumar"),
+      //       Text("9696599965")
+      //     ],
+      //   ),
     
     
         Container(

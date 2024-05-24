@@ -1,4 +1,5 @@
 import 'package:daan_i_app/localization/app_localizations.dart';
+import 'package:daan_i_app/presentation/donar_module/onboarding_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'core/app_export.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
             title: 'Daan-i',
             initialRoute: AppRoutes.selectLanguageScreen,
             getPages: AppRoutes.pages,
-            // home: const MyHomePage(title: 'Daan-i Home Page'),
+           // home:OnbordingScreen(),
           ),
         );
       },
