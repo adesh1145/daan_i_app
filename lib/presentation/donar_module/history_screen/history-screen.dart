@@ -22,8 +22,8 @@ class _HistoryScreenState extends State<HistoryScreen> {
       "pickuplocation":"c block,GangaNagar,meerut",
       "status":"Pending",
     }
-   
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +69,6 @@ class _HistoryScreenState extends State<HistoryScreen> {
                  SizedBox(
                   height: 10,
                 ),
-           
               ],
            ),
          ),
