@@ -5,11 +5,10 @@ import '../../../../core/utils/logger.dart';
 import '../../../../data/models/common_models/banner_model.dart';
 import '../../../../data/network/network_api_services.dart';
 
-class HomeTabController extends GetxController {
+class HomeScreenTabController extends GetxController {
+  RxnString selecteCategory = RxnString();
   RxBool isLoading = false.obs;
   RxList<Respons> bannerList = <Respons>[].obs;
-  RxString? selecteCategory = "".obs;
-
   final List<String> donateCategory = [
     "Food",
     "Clothes",

@@ -11,12 +11,14 @@ import 'controller/home_screen_controller.dart';
 
 class HomeScreen extends StatelessWidget {
   int totalDonation = 50;
+
+  HomeScreen({super.key});
   //int OverallStreaks=100;
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder(
-        init: HomeTabController(),
+        init: HomeScreenTabController(),
         builder: (controller) {
           return Scaffold(
             appBar: CustomAppBar(
@@ -39,10 +41,20 @@ class HomeScreen extends StatelessWidget {
                       CustomImageSlider(
                           viewportFraction: .89,
                           isAutoSlide: true,
-                          bannerImageList: controller.bannerList
-                              .map((element) =>
-                                  ImageSliderList(imgUrl: element.image ?? ""))
-                              .toList()),
+                          bannerImageList: <ImageSliderList>[
+                            ImageSliderList(
+                                imgUrl:
+                                    "https://img.freepik.com/free-vector/donation-concept-illustration-idea-gift-support-charity_613284-1588.jpg?w=1060&t=st=1716531515~exp=1716532115~hmac=7507837f89583df2bf9b94a3d0aa3ad34a061311fb382ebaef5a733aeee77517"),
+                            ImageSliderList(
+                                imgUrl:
+                                    "https://img.freepik.com/free-vector/fundraising-event-template-design_23-2150806464.jpg?w=1380&t=st=1715277380~exp=1715277980~hmac=075d17aa38b567f6d2c83c07d3837c3eee1fbf4a611dffe0570001e8181915d"),
+                            ImageSliderList(
+                                imgUrl:
+                                    "https://img.freepik.com/free-vector/hand-drawn-charity-event-template-design_23-2149506441.jpg?t=st=1716531967~exp=1716535567~hmac=44da748dd347e70f0769abccfb08cb9690ec78bf2e0c37d8a99ab4e8e7eb86f6&w=1380"),
+                            ImageSliderList(
+                                imgUrl:
+                                    "https://img.freepik.com/free-vector/charity-flat-concept-with-smiling-volunteers-holding-donation-boxes-big-heart-vector-illustration_1284-79449.jpg?w=1380&t=st=1716532350~exp=1716532950~hmac=f012207cb5713ef1fee8648381e917df101f7e08bdc9727ae05769eaf0b8a7fa")
+                          ]),
 
                       SizedBox(
                         height: 10.h,
@@ -120,12 +132,14 @@ class HomeScreen extends StatelessWidget {
                                     child: const Padding(
                                       padding: EdgeInsets.all(15),
                                       child: Image(
-                                          image: AssetImage(
-                                              "assets/icons/vegetable2_icon.png")),
+                                        image: AssetImage(
+                                            "assets/icons/money5.png"),
+                                        // color: Color.fromARGB(255, 219, 17, 17),
+                                      ),
                                     ),
                                   ),
                                 ),
-                                const Text("Vegetables"),
+                                const Text("Money"),
                               ],
                             ),
 

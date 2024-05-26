@@ -43,7 +43,8 @@ class MyApp extends StatelessWidget {
             title: 'Daan-i',
             initialRoute: AppRoutes.splashScreen,
             getPages: AppRoutes.pages,
-           // home:OnbordingScreen(),
+            // home:OnbordingScreen(),
+            // home:OnbordingScreen(),
           ),
         );
       },
