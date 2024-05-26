@@ -140,11 +140,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         width: 60.w,
                         child: const Padding(
                           padding: EdgeInsets.all(15),
-                          child: Image(image: AssetImage("assets/icons/vegetable2_icon.png")),
+                          child: Image(
+                            
+                            image: AssetImage("assets/icons/money5.png"),
+                           // color: Color.fromARGB(255, 219, 17, 17),
+                        ),
                         ),  
                       ),
                     ),
-                    const Text("Vegetables"),
+                    const Text("Money"),
                    ],
                 ),
 

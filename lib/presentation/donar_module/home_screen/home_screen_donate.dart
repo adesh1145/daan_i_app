@@ -8,16 +8,8 @@ import 'controller/home_screen_controller.dart';
 // ignore: must_be_immutable
 class HomeDonateScreen extends GetWidget<HomeScreenTabController> {
   HomeDonateScreen({super.key});
-  
-  HomeScreenTabController controller = Get.put( HomeScreenTabController());
-  String? selecteCategory;
-  final List<String> donateCategory = [
-    "Food",
-    "Clothes",
-    "Money",
-    "Others",
-  ];
 
+  
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +20,7 @@ class HomeDonateScreen extends GetWidget<HomeScreenTabController> {
       ),
 
 
-      body: SingleChildScrollView(
+      body: Obx(() => SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: Column(
         
@@ -47,9 +39,9 @@ class HomeDonateScreen extends GetWidget<HomeScreenTabController> {
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<String>(
                   isExpanded: true,
-                  value: selecteCategory,
+                  value:controller. selecteCategory.value,
                   hint: Text("Select Category"),
-                  items: donateCategory.map((e) {
+                  items:controller. donateCategory.map((e) {
                     return DropdownMenuItem<String>(
                       value: e,
                       child: Text(e),
@@ -57,7 +49,8 @@ class HomeDonateScreen extends GetWidget<HomeScreenTabController> {
                   } 
                   ).toList(), 
                   onChanged: (v){
-                    selecteCategory=v;
+                    controller. selecteCategory.value=v;
+                    
                     
                   }
                   ),
@@ -105,7 +98,7 @@ class HomeDonateScreen extends GetWidget<HomeScreenTabController> {
                ) 
              ],
         ),
-      ),
+     ) ),
     );
   }
 }

@@ -2,7 +2,7 @@ import '../../../../../core/app_export.dart';
 
 class HomeScreenTabController extends GetxController {
 
-   RxString? selecteCategory="".obs;
+   RxnString selecteCategory=RxnString();
  
   final List<String> donateCategory = [
     "Food",

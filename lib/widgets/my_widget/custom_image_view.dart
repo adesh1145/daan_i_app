@@ -49,7 +49,7 @@ class CustomImageView extends StatelessWidget {
     this.radius,
     this.margin,
     this.border,
-    this.placeHolder = 'assets/images/image_not_found.png',
+    this.placeHolder = 'assets/images/logo.jpeg',
   });
 
   @override
@@ -76,7 +76,7 @@ class CustomImageView extends StatelessWidget {
   _buildCircleImage() {
     if (radius != null) {
       return ClipRRect(
-        borderRadius: BorderRadius.circular(0),
+        borderRadius: radius??BorderRadius.circular(0),
         child: _buildImageWithBorder(),
       );
     } else {
