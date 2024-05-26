@@ -7,8 +7,5 @@ import '../controller/bottom_navigation_bar_controller.dart';
 
 class CustBottomNavigationBarBinding extends Bindings {
   @override
-  void dependencies() {
-    // Get.lazyPut<CustBottomNavigationBarController>(
-    //     () => CustBottomNavigationBarController());
-  }
+  void dependencies() {}
 }

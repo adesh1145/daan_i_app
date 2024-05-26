@@ -53,10 +53,6 @@ class ImageConstant {
 
   static String success = 'assets/images/success.svg';
 
-  static String pickup = 'assets/images/pickup.svg';
-
-  static String drop = 'assets/images/drop.svg';
-
   static String search = 'assets/images/search.svg';
 
   static String phoneRed = 'assets/images/phone_red.svg';
@@ -100,8 +96,6 @@ class ImageConstant {
   static String circleGreen = 'assets/images/circle_green.svg';
 
   static String clock = 'assets/images/clock.svg';
-
-  static String currentLocation = 'assets/images/current_location.svg';
 
   static String downArrowWhite = 'assets/images/down_arrow_white.svg';
 
@@ -181,7 +175,7 @@ class ImageConstant {
   static String attachment = 'assets/images/attachment.svg';
   static String mapAmbulance = 'assets/images/map_ambulance.png';
   static String pinkAmbulance = 'assets/images/pink.svg';
-  static String pickupMarker = 'assets/images/pickup_marker.png';
+
   static String dropMarker = 'assets/images/drop_marker.png';
   static String medicine = 'assets/images/medicine.svg';
   static String labTest = 'assets/images/lab_test.svg';
@@ -319,4 +313,9 @@ class ImageConstant {
   static String appLogoSvg = 'assets/images/logo.svg';
   static String indiaFlag = 'assets/images/india_flag.svg';
   static String google = 'assets/images/google.svg';
+  static String pickupMarker = 'assets/images/pickup_marker.png';
+  static String currentLocation = 'assets/images/current_location.svg';
+  static String pickup = 'assets/images/pickup.svg';
+
+  static String drop = 'assets/images/drop.svg';
 }

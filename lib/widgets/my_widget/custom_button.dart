@@ -148,12 +148,13 @@ class CustomOutlinedButton extends StatelessWidget {
                   autofocus: autofocus,
                   style: TextButton.styleFrom(
                     // maximumSize: Size(double.maxFinite, 40.h),
-                    backgroundColor: backgroundColor ??
-                        Theme.of(context).colorScheme.primary,
+                    backgroundColor: backgroundColor,
                     alignment: alignment,
                     elevation: elevation == null ? null : (elevation),
                     padding: padding,
-
+                    side: borderColor != null
+                        ? BorderSide(color: borderColor!)
+                        : null,
                     shape: borderRadius == null
                         ? RoundedRectangleBorder(
                             borderRadius: BorderRadiusStyle.roundedBorder8,
@@ -183,12 +184,12 @@ class CustomOutlinedButton extends StatelessWidget {
             autofocus: autofocus,
             style: TextButton.styleFrom(
               // maximumSize: Size(double.maxFinite, 40.h),
-              backgroundColor:
-                  backgroundColor ?? Theme.of(context).colorScheme.primary,
+              backgroundColor: backgroundColor,
               alignment: alignment,
               elevation: elevation == null ? null : (elevation),
               padding: padding,
-
+              side:
+                  borderColor != null ? BorderSide(color: borderColor!) : null,
               shape: borderRadius == null
                   ? RoundedRectangleBorder(
                       borderRadius: BorderRadiusStyle.roundedBorder8,

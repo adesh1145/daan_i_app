@@ -6,6 +6,6 @@ import 'package:get/get.dart';
 class HomeScreenTabBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => HomeDonateScreen());
+    Get.lazyPut(() => HomeTabController());
   }
 }

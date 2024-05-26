@@ -11,12 +11,10 @@ class SplashController extends GetxController {
   @override
   void onInit() {
     Future.delayed(const Duration(seconds: 3), () async {
-      print(AppStorage.getToken);
       var token = AppStorage.getToken;
       if (token == null || token == '') {
-        Get.offAllNamed(AppRoutes.selectLanguageScreen);
+        Get.offAllNamed(AppRoutes.onBoardingScreen);
       } else {
-        print("Else$token");
         Get.offNamed(AppRoutes.custBottomNavigation);
       }
     });

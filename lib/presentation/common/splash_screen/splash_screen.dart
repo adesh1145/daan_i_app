@@ -14,6 +14,7 @@ class SplashScreen extends GetWidget<SplashController> {
           child: Center(
             child: CustomImageView(
               imagePath: ImageConstant.appLogo,
+              height: 150.h,
             ),
           ) /* add child content here */,
         ),

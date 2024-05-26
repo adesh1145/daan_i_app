@@ -113,7 +113,8 @@ class CustProfileTabScreen extends StatelessWidget {
                       decoration: const BoxDecoration(),
                       child: InkWell(
                         onTap: () {
-                          Get.to(const CustProfileTabAddressScreen());
+                          // Get.to(const CustProfileTabAddressScreen());
+                          Get.toNamed(AppRoutes.selectAddressScreen);
                         },
                         child: const ListTile(
                           leading: Icon(
@@ -128,10 +129,11 @@ class CustProfileTabScreen extends StatelessWidget {
                       decoration: const BoxDecoration(),
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return CustProfileTabChangePasswordScreen();
-                          }));
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) {
+                          //   return CustProfileTabChangePasswordScreen();
+                          // }));
+                          Get.toNamed(AppRoutes.selectNGOScreen);
                         },
                         child: const ListTile(
                           leading: Icon(

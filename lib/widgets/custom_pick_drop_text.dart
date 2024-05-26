@@ -42,7 +42,7 @@ class CustomPickupDropText extends StatelessWidget {
                         children: [
                           Text(
                             pickup_txt,
-                            textScaler: TextScaler.linear(Constants.factor),
+                            textScaler: customTextScaler,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: AppStyle.montserrat10textTwo600,
@@ -83,7 +83,7 @@ class CustomPickupDropText extends StatelessWidget {
                     child: Text(
                       pickup,
                       maxLines: 2,
-                      textScaler: TextScaler.linear(Constants.factor),
+                      textScaler: customTextScaler,
                       textAlign: TextAlign.left,
                       style: AppStyle.montserrat11textOne400,
                     ),
@@ -112,7 +112,7 @@ class CustomPickupDropText extends StatelessWidget {
                       ),
                       child: Text(
                         drop_txt,
-                        textScaler: TextScaler.linear(Constants.factor),
+                        textScaler: customTextScaler,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: AppStyle.montserrat10textTwo600,
@@ -130,7 +130,7 @@ class CustomPickupDropText extends StatelessWidget {
               child: Text(
                 drop,
                 maxLines: 2,
-                textScaler: TextScaler.linear(Constants.factor),
+                textScaler: customTextScaler,
                 textAlign: TextAlign.left,
                 style: AppStyle.montserrat11textOne400,
               ),

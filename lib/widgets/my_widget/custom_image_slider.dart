@@ -97,7 +97,7 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: EdgeInsets.only(right: 10.w,left: 10.w),
+                  padding: EdgeInsets.only(right: 10.w, left: 10.w),
                   child: ClipRRect(
                       borderRadius:
                           BorderRadius.circular(widget.radius ?? 12.r),
@@ -122,10 +122,10 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
           visible: !widget.inImageSliderPoint,
           child: Container(
               margin: EdgeInsets.only(top: 10.h),
-              child: Obx(() => Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: outOfImagePointer(widget.bannerImageList.length),
-                  ))),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: outOfImagePointer(widget.bannerImageList.length),
+              )),
         ),
       ],
     );
@@ -134,26 +134,27 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
   outOfImagePointer(int length) {
     return [
       for (var index = 0; index < length; index++)
-        Container(
-          margin: EdgeInsets.only(left: 4.w, right: 4.w),
-          child: bannerSectionNumer.value == index
-              ? Container(
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.scrim,
-                      borderRadius: BorderRadiusStyle.roundedBorder12),
-                  padding: EdgeInsets.only(
-                      left: 8.w, right: 8.w, top: 0.5.h, bottom: 0.5.h),
-                  child: Text(
-                    "${index + 1}/${bannerLength.value}",
-                    textScaler: TextScaler.linear(Constants.factor),
-                    style: AppStyle.roboto10w600.copyWith(color: Colors.white),
-                  ),
-                )
-              : CircleAvatar(
-                  radius: 4.r,
-                  backgroundColor: Theme.of(context).colorScheme.outline,
-                ),
-        )
+        Obx(() => Container(
+              margin: EdgeInsets.only(left: 4.w, right: 4.w),
+              child: bannerSectionNumer.value == index
+                  ? Container(
+                      decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.scrim,
+                          borderRadius: BorderRadiusStyle.roundedBorder12),
+                      padding: EdgeInsets.only(
+                          left: 8.w, right: 8.w, top: 0.5.h, bottom: 0.5.h),
+                      child: Text(
+                        "${index + 1}/${bannerLength.value}",
+                        textScaler: TextScaler.linear(Constants.factor),
+                        style:
+                            AppStyle.roboto10w600.copyWith(color: Colors.white),
+                      ),
+                    )
+                  : CircleAvatar(
+                      radius: 4.r,
+                      backgroundColor: Theme.of(context).colorScheme.outline,
+                    ),
+            ))
     ];
   }
 
