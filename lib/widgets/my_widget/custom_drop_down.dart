@@ -2,7 +2,7 @@ import 'package:daan_i_app/core/app_export.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../main.dart';
+import '../../main.dart';
 
 class CustomDropDown<T> extends StatelessWidget {
   final List<KeyValue<T>> dropDownList;

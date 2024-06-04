@@ -2,10 +2,7 @@ import 'dart:io';
 
 import 'package:daan_i_app/core/app_export.dart';
 import 'package:daan_i_app/core/utils/pref_utils.dart';
-import 'package:dio/dio.dart' as dio;
-
-import '../../core/utils/logger.dart';
-import '../../core/utils/snack_bar.dart';
+// import 'package:dio/dio.dart' as dio;
 
 import 'dart:async';
 import 'dart:convert';
@@ -115,9 +112,6 @@ class NetworkApiService extends GetxService {
       Map<String, String>? headers,
       bool isSetToken = true,
       bool isverifyStatusCode = true}) async {
-    print(AppStorage.getToken);
-    await AppStorage.setToken('MITA');
-    print(AppStorage.getToken);
     header.addAll({
       'Authorization': 'Bearer ${AppStorage.getToken}',
     });
@@ -201,7 +195,7 @@ class NetworkApiService extends GetxService {
 
   Future<Dio.Response?> postMultipartApi(
       {required String url,
-      FormData? body,
+      Dio.FormData? body,
       Map<String, dynamic>? query,
       bool isverifyStatusCode = true}) async {
     FocusScope.of(Get.context!).unfocus();
@@ -223,7 +217,7 @@ class NetworkApiService extends GetxService {
         data: body,
         options: Dio.Options(
           headers: header,
-          contentType: "*/*",
+          contentType: "multipart/form-data",
         ),
       );
       Logger.logPrint("Status Code---> ${response.statusCode}");

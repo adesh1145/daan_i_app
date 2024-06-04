@@ -1,8 +1,5 @@
-import 'package:daan_i_app/core/utils/snack_bar.dart';
-import 'package:daan_i_app/data/network/network_api_services.dart';
-
 import '../../../../../core/app_export.dart';
-import '../../../../core/utils/logger.dart';
+
 import '../../../../core/utils/pref_utils.dart';
 
 class LoginController extends GetxController

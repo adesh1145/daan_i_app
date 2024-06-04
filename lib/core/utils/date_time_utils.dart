@@ -1,8 +1,9 @@
 import 'package:intl/intl.dart';
 
-DateTime stringToDDMMMYYYY({required String date}) {
+String stringToDDMMMYYYY({required String date}) {
+  DateTime dateTime = DateTime.parse(date);
   var formatter = DateFormat('dd-MMM-yyyy');
-  return formatter.parse(date);
+  return formatter.format(dateTime);
 }
 
 // DateTime stringToDDMMMYYYY({required String date}) {

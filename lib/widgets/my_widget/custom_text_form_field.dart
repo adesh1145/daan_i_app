@@ -4,7 +4,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? hintText;
   final String? labelText;
   final TextInputType keyboardType;
-  final bool obscureText;
+  // final bool obscureText;
   final bool isPassword;
   final bool readOnly;
   final Widget? prefixIcon;
@@ -44,7 +44,7 @@ class CustomTextFormField extends StatelessWidget {
       this.focusBorderColor,
       this.errorBorderColor,
       this.textStyle,
-      this.obscureText = false,
+      // this.obscureText = false,
       this.borderWidth = 1.0,
       this.floatingLabelBehavior,
       this.controller,
@@ -69,7 +69,7 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    isvisible.value = obscureText;
+    isvisible.value = isPassword;
     return Obx(() => TextFormField(
           validator: validator,
           keyboardType: keyboardType,
@@ -140,8 +140,8 @@ class CustomTextFormField extends StatelessWidget {
                       isvisible.value = !isvisible.value;
                     },
                     icon: isvisible.value
-                        ? const Icon(Icons.visibility)
-                        : const Icon(Icons.visibility_off))
+                        ? const Icon(Icons.visibility_off)
+                        : const Icon(Icons.visibility))
                 : suffixIcon,
           ),
         ));

@@ -17,8 +17,6 @@ class ImageConstant {
 
   static String edit = 'assets/images/edit.svg';
 
-  static String upload = 'assets/images/upload.svg';
-
   static String loginImg = 'assets/images/login_img.png';
 
   static String star = 'assets/images/start.svg';
@@ -49,15 +47,9 @@ class ImageConstant {
 
   static String logo = 'assets/images/logo.svg';
 
-  static String error = 'assets/images/error.svg';
-
-  static String success = 'assets/images/success.svg';
-
   static String search = 'assets/images/search.svg';
 
   static String phoneRed = 'assets/images/phone_red.svg';
-
-  static String noDataFound = 'assets/images/no_data_found.svg';
 
   static String arrowRed = 'assets/images/arrow_red.svg';
 
@@ -116,8 +108,6 @@ class ImageConstant {
   static String ambulance = 'assets/images/ambulance.svg';
 
   static String profile = 'assets/images/profile.svg';
-
-  static String infoGrey = 'assets/images/info_grey.svg';
 
   static String contact = 'assets/images/contact.svg';
 
@@ -283,7 +273,6 @@ class ImageConstant {
   static String copywar300 = 'assets/images/lab_test/copy_war300.svg';
   static String maleDoctor = 'assets/images/lab_test/male_doctor.png';
   static String smilingFace = 'assets/images/lab_test/smiling_face.png';
-  static String successDialog = 'assets/images/lab_test/success_dailog.png';
   static String microscoprCta = 'assets/images/lab_test/microscope_cta.svg';
   static String deleteCta = 'assets/images/medicine/delete_cta.png';
   static String medicinePresc = 'assets/images/medicine/medicinePresc.png';
@@ -316,6 +305,12 @@ class ImageConstant {
   static String pickupMarker = 'assets/images/pickup_marker.png';
   static String currentLocation = 'assets/images/current_location.svg';
   static String pickup = 'assets/images/pickup.svg';
-
   static String drop = 'assets/images/drop.svg';
+  static String insight = 'assets/icons/insight_icon.png';
+  static String error = 'assets/images/error.svg';
+  static String success = 'assets/images/success.svg';
+  static String upload = 'assets/images/upload.svg';
+  static String successDialog = 'assets/images/success_dailog.png';
+  static String noDataFound = 'assets/images/no_data_found.svg';
+  static String infoGrey = 'assets/images/info_grey.svg';
 }

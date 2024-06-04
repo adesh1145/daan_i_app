@@ -1,10 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:daan_i_app/core/app_export.dart';
 
-import '../core/constants/constants.dart';
-import '../core/utils/image_constant.dart';
-import '../theme/app_style.dart';
-import 'my_widget/custom_image_view.dart';
+import 'custom_image_view.dart';
 
 // ignore: must_be_immutable
 class DataNotFound extends StatelessWidget {
@@ -41,7 +37,7 @@ class DataNotFound extends StatelessWidget {
               padding: EdgeInsets.only(top: 16.h),
               child: Text(
                 tittle ?? "",
-                textScaler: TextScaler.linear(Constants.factor),
+                textScaler: customTextScaler,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
                 style: AppStyle.lato14textOne800,
@@ -51,7 +47,7 @@ class DataNotFound extends StatelessWidget {
               padding: EdgeInsets.only(top: 8.h),
               child: Text(
                 subTittleOne ?? "",
-                textScaler: TextScaler.linear(Constants.factor),
+                textScaler: customTextScaler,
                 maxLines: 5,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,

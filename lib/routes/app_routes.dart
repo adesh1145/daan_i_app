@@ -4,8 +4,8 @@ import 'package:daan_i_app/presentation/common/onboarding_screen/binding/onboard
 import 'package:daan_i_app/presentation/common/onboarding_screen/onboarding_screen.dart';
 import 'package:daan_i_app/presentation/common/otp_screen/binding/otp_binding.dart';
 import 'package:daan_i_app/presentation/common/otp_screen/otp_screen.dart';
-import 'package:daan_i_app/presentation/common/select_address_screen/binding/select_address_binding.dart';
-import 'package:daan_i_app/presentation/common/select_address_screen/select_address_screen.dart';
+import 'package:daan_i_app/presentation/donar_module/select_address_screen/binding/select_address_binding.dart';
+import 'package:daan_i_app/presentation/donar_module/select_address_screen/select_address_screen.dart';
 import 'package:daan_i_app/presentation/common/splash_screen/binding/splash_binding.dart';
 import 'package:daan_i_app/presentation/common/splash_screen/splash_screen.dart';
 import 'package:daan_i_app/presentation/donar_module/botton_navigation_bar/bottom_navigation_bar.dart';
@@ -15,8 +15,10 @@ import 'package:daan_i_app/presentation/donar_module/signup_screen/binding/cust_
 import 'package:daan_i_app/presentation/donar_module/signup_screen/cust_signup_screen.dart';
 import 'package:get/get.dart';
 
-import '../presentation/common/map_address_screen/binding/map_address_binding.dart';
-import '../presentation/common/map_address_screen/map_address_screen.dart';
+import '../presentation/donar_module/donate_field_screen/donate_field_screen.dart';
+import '../presentation/donar_module/map_address_screen/add_address_screen.dart';
+import '../presentation/donar_module/map_address_screen/binding/map_address_binding.dart';
+import '../presentation/donar_module/map_address_screen/map_address_screen.dart';
 import '../presentation/common/select_language_screen/binding/select_language_binding.dart';
 import '../presentation/common/select_language_screen/select_language_screen.dart';
 import '../presentation/donar_module/botton_navigation_bar/binding/bootom_navigation_bar_binding.dart';
@@ -39,6 +41,7 @@ class AppRoutes {
   static const String addAddressScreen = '/addAddressScreen';
   static const String selectAddressScreen = '/selectAddressScreen';
   static const String selectNGOScreen = '/selectNGOScreen';
+  static const String donateFieldScreen = '/donateFieldScreen';
 
   static List<GetPage> pages = [
     //! Common Screen
@@ -103,6 +106,10 @@ class AppRoutes {
         page: () => const MapAddressScreen(),
         bindings: [MapAddressBinding()]),
     GetPage(
+        name: addAddressScreen,
+        page: () => const AddAddressScreen(),
+        bindings: const []),
+    GetPage(
         name: selectAddressScreen,
         page: () => const SelectAddressScreen(),
         bindings: [SelectAddressBinding()]),
@@ -110,6 +117,10 @@ class AppRoutes {
         name: selectNGOScreen,
         page: () => const SelectNGOScreen(),
         bindings: [SelectNGOBinding()]),
+    GetPage(
+        name: donateFieldScreen,
+        page: () => const DonateFieldScreen(),
+        bindings: []),
 
     //! NGO Screen
 

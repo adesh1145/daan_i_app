@@ -7,7 +7,7 @@ import 'package:daan_i_app/presentation/donar_module/cust_profile_tab_screen/edi
 import 'package:daan_i_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:daan_i_app/widgets/my_widget/custom_image_view.dart';
 
-import '../../../widgets/action_button_bottom_sheet.dart';
+import '../../../widgets/my_widget/action_button_bottom_sheet.dart';
 import 'cust_profile_tab_address_screen.dart';
 
 class CustProfileTabScreen extends StatelessWidget {
