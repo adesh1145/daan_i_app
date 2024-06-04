@@ -18,4 +18,5 @@ class UrlConstants {
   static const nearByNgoUrl = "donar/nearByNgo";
   static const donateUrl = "donar/donate";
   static const donateHistoryUrl = "donar/donateHistory";
+  static const topDonarUrl = "donar/topDonar";
 }
