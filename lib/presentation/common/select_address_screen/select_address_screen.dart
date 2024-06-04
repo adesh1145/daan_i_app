@@ -103,7 +103,7 @@ class SelectAddressScreen extends GetWidget<SelectAddressController> {
                                         Padding(
                                           padding: EdgeInsets.only(top: 6.h),
                                           child: Text(
-                                            "Full Addres njsdefnkjdsdfsfjkj  ks vd vjdfv ",
+                                            "C block Ganganagar Meerut U.P-250001 ",
                                             maxLines: 5,
                                             style: AppStyle.roboto14w400
                                                 .copyWith(

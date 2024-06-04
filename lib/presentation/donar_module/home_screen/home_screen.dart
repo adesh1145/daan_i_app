@@ -220,7 +220,7 @@ class HomeScreen extends StatelessWidget {
                                             height: 115.h,
                                             child: CustomImageView(
                                               imagePath:
-                                                  "assets/icons/insight_icon.png",
+                                                  ImageConstant.insight,
                                             )),
                                         const Text(
                                           "Insights",
@@ -231,14 +231,10 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                         const Center(
                                             child: Text(
-                                          "Data-driven act of ",
+                                          "Data-driven act of \nkindness",
                                           style: TextStyle(fontSize: 12),
                                         )),
-                                        const Center(
-                                            child: Text(
-                                          "kindness",
-                                          style: TextStyle(fontSize: 12),
-                                        )),
+
                                       ],
                                     ),
                                   ),

@@ -152,20 +152,7 @@ class SelectNGOScreen extends GetWidget<SelectNGOController> {
 
     return Obx(() => InkWell(
         onTap: () {
-          // controller.facilitiesList.value =
-          //     controller.categoryData[index].facilitiesList ?? [];
-          // controller.casesLikeList.value =
-          //     controller.categoryData[index].caseLikeList ?? [];
-          // controller.isSelectedCardValue.value =
-          //     controller.categoryData[index].categoryType.toString();
-          // // controller.consumerData.write(Constants.enquiryId,
-          // //     controller.categoryData[index].enquaryId.toString());
-          // controller.consumerData.write(Constants.categoryType,
-          //     controller.categoryData[index].categoryType.toString());
-          // controller.index.value = index;
-          // controller.availabilityStatus.value =
-          //     controller.categoryData[index].serviceStatus.toString();
-          // controller.selectedIndex.value = index;
+        
         },
         child: Padding(
           padding: EdgeInsets.only(left: 0, top: 0, right: 16.w, bottom: 0.h),
@@ -224,103 +211,7 @@ class SelectNGOScreen extends GetWidget<SelectNGOController> {
                                       style: AppStyle.roboto13w700,
                                     ),
                                   ),
-                                  //       Expanded(
-                                  //         flex: 0,
-                                  //         child: Padding(
-                                  //           padding:
-                                  //               EdgeInsets.only(left: 5.w, right: 12.w),
-                                  //           child: Row(
-                                  //             children: [
-                                  //               Text(
-                                  //                 controller.categoryData[index]
-                                  //                         .currencySymbol
-                                  //                         .toString() +
-                                  //                     controller.categoryData[index]
-                                  //                         .totalBookingAmount
-                                  //                         .toString(),
-                                  //                 textScaler: TextScaler.linear(
-                                  //                     Constants.factor),
-                                  //                 overflow: TextOverflow.ellipsis,
-                                  //                 textAlign: TextAlign.left,
-                                  //                 style: AppStyle.lato13textOne700,
-                                  //               ),
-                                  //               CustomImageView(
-                                  //                 svgPath: ImageConstant.info,
-                                  //                 height: 14.w,
-                                  //                 width: 14.w,
-                                  //                 onTap: () {
-                                  //                   controller.facilitiesList.value =
-                                  //                       controller.categoryData[index]
-                                  //                           .facilitiesList!;
-                                  //                   controller.casesLikeList.value =
-                                  //                       controller.categoryData[index]
-                                  //                           .caseLikeList!;
-                                  //                   controller
-                                  //                           .isSelectedCardValue.value =
-                                  //                       controller.categoryData[index]
-                                  //                           .categoryType
-                                  //                           .toString();
-
-                                  //                   // controller.consumerData.write(
-                                  //                   //     Constants.enquiryId,
-                                  //                   //     controller
-                                  //                   //         .categoryData[index].enquaryId
-                                  //                   //         .toString());
-                                  //                   controller.consumerData.write(
-                                  //                       Constants.categoryType,
-                                  //                       controller.categoryData[index]
-                                  //                           .categoryType
-                                  //                           .toString());
-                                  //                   controller.index.value = index;
-                                  //                   controller
-                                  //                           .availabilityStatus.value =
-                                  //                       controller.categoryData[index]
-                                  //                           .serviceStatus
-                                  //                           .toString();
-
-                                  //                   ReadMoreBottomSheets(
-                                  //                       controller.categoryData[index]
-                                  //                           .categoryName,
-                                  //                       controller.jsonData.isEmpty
-                                  //                           ? "DONE"
-                                  //                           : controller.jsonData[26]
-                                  //                               .textInSelectedLang
-                                  //                               .toString(),
-                                  //                       controller,
-                                  //                       controller.facilitiesList,
-                                  //                       controller.casesLikeList,
-                                  //                       index);
-                                  //                 },
-                                  //                 color: Colors.red,
-                                  //                 margin: EdgeInsets.only(
-                                  //                   left: 5,
-                                  //                 ),
-                                  //               ),
-                                  //             ],
-                                  //           ),
-                                  //         ),
-                                  //       ),
-                                  //     ],
-                                  //   ),
-                                  // ),
-
-                                  // Expanded(
-                                  //   flex: 0,
-                                  //   child: Padding(
-                                  //     padding: EdgeInsets.only(
-                                  //       left: 12.w,
-                                  //       top: 4.h,
-                                  //       right: 12.w,
-                                  //     ), //bottom: 12.h
-                                  //     child: Text(
-                                  //       "NGo Full Address",
-                                  //       textScaler: customTextScaler,
-                                  //       maxLines: 5,
-                                  //       textAlign: TextAlign.left,
-                                  //       style: AppStyle.roboto10w400,
-                                  //     ),
-                                  //   ),
-                                  // ),
+                            
                                 ],
                               ),
                             ),

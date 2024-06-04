@@ -2,13 +2,13 @@ import 'package:daan_i_app/core/app_export.dart';
 
 import '../../../widgets/app_bar/custom_app_bar.dart';
 import '../../../widgets/my_widget/custom_image_view.dart';
-import 'controller/cust_profile_tab_controller.dart';
+import 'controller/ngo_profile_tab_controller.dart';
 
 // ignore: must_be_immutable
-class CustProfileTabChangePasswordScreen extends GetWidget<NgoProfileTabController> {
-  CustProfileTabChangePasswordScreen({super.key});
+class NgoProfileTabChangePasswordScreen extends GetWidget<NgoTabController> {
+  NgoProfileTabChangePasswordScreen({super.key});
   
-  NgoProfileTabController controller = Get.put(NgoProfileTabController());
+  NgoTabController controller = Get.put(NgoTabController());
 
   @override
   Widget build(BuildContext context) {

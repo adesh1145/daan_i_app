@@ -7,6 +7,7 @@ import 'core/app_export.dart';
 import 'core/utils/dismiss_keyboard.dart';
 import 'core/utils/initial_bindings.dart';
 import 'firebase_options.dart';
+import 'presentation/donar_module/signup_screen/cust_signup_screen.dart';
 import 'theme/color_schemes.g.dart';
 
 Future<void> main() async {
@@ -41,9 +42,9 @@ class MyApp extends StatelessWidget {
             fallbackLocale: const Locale('en', 'US'),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             title: 'Daan-i',
-            initialRoute: AppRoutes.splashScreen,
+            initialRoute: AppRoutes.custBottomNavigation,
             getPages: AppRoutes.pages,
-            // home:OnbordingScreen(),
+            // home:CustSignUpScreen(),
             // home:OnbordingScreen(),
           ),
         );

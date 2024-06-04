@@ -5,8 +5,8 @@ import 'package:daan_i_app/widgets/my_widget/custom_image_view.dart';
 import 'package:daan_i_app/widgets/my_widget/custom_loader.dart';
 import 'package:daan_i_app/widgets/my_widget/custom_text_form_field.dart';
 
-class CustProfileTabEditProfileScreen extends StatelessWidget {
-  CustProfileTabEditProfileScreen({super.key});
+class NgoProfileTabEditProfileScreen extends StatelessWidget {
+  NgoProfileTabEditProfileScreen({super.key});
   final updateFormKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -69,8 +69,8 @@ class CustProfileTabEditProfileScreen extends StatelessWidget {
                           child: CustomTextFormField(
                             controller: controller.mobileCOntroller,
                             readOnly: true,
-                            labelText: "Number",
-                            prefixIcon: Icon(Icons.phone),
+                            labelText: "NGO Owner Name",
+                            prefixIcon: Icon(Icons.face),
                           ),
                         ),
 
@@ -83,10 +83,10 @@ class CustProfileTabEditProfileScreen extends StatelessWidget {
                             controller: controller.nameCOntroller,
                             keyboardType: TextInputType.name,
                             textInputAction: TextInputAction.next,
-                            labelText: "Name",
+                            labelText: "NGO Name",
                             prefixIcon: Icon(Icons.abc),
                             validator: (p0) => p0 != null && p0.isEmpty
-                                ? "Please Enter Name"
+                                ? "Please Enter NGO Name"
                                 : null,
                           ),
                         ),
@@ -99,9 +99,9 @@ class CustProfileTabEditProfileScreen extends StatelessWidget {
                             keyboardType: TextInputType.name,
                             textInputAction: TextInputAction.done,
                             controller: controller.bioCOntroller,
-                            hintText: "Write bio here........",
+                            hintText: "Write About here........",
                             validator: (p0) => p0 != null && p0.isEmpty
-                                ? "Please Enter your Bio"
+                                ? "Please Enter About of your NGO "
                                 : null,
                             maxLine: 6,
                           ),

@@ -318,4 +318,5 @@ class ImageConstant {
   static String pickup = 'assets/images/pickup.svg';
 
   static String drop = 'assets/images/drop.svg';
+  static String insight = 'assets/icons/insight_icon.png';
 }

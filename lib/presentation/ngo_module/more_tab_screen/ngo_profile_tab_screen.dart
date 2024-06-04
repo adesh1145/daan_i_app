@@ -8,10 +8,10 @@ import 'package:daan_i_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:daan_i_app/widgets/my_widget/custom_image_view.dart';
 
 import '../../../widgets/action_button_bottom_sheet.dart';
-import 'cust_profile_tab_address_screen.dart';
+import 'ngo_profile_tab_address_screen.dart';
 
-class CustProfileTabScreen extends StatelessWidget {
-  const CustProfileTabScreen({super.key});
+class NgoProfileTabScreen extends StatelessWidget {
+  const NgoProfileTabScreen({super.key});
 
   static const List<String> custProfileTabList = [
     "Edit Profile",
@@ -21,7 +21,7 @@ class CustProfileTabScreen extends StatelessWidget {
     "Logout"
   ];
 
-  static const List<IconData> custProfileTabIconList = [
+  static const List<IconData> NgoProfileTabIconList = [
     Icons.manage_accounts,
     Icons.location_city,
     Icons.lock_open,
@@ -35,10 +35,6 @@ class CustProfileTabScreen extends StatelessWidget {
         init: NgoProfileTabController(),
         builder: (controller) {
           return Obx(() => Scaffold(
-                appBar: const CustomAppBar(
-                  tittle: "My Profile",
-                  isBackBtnVisible: false,
-                ),
                 body: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -109,22 +105,22 @@ class CustProfileTabScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(
-                      decoration: const BoxDecoration(),
-                      child: InkWell(
-                        onTap: () {
-                          // Get.to(const CustProfileTabAddressScreen());
-                          Get.toNamed(AppRoutes.selectAddressScreen);
-                        },
-                        child: const ListTile(
-                          leading: Icon(
-                            Icons.location_on,
-                          ),
-                          title: Text("Address"),
-                          trailing: Icon(Icons.chevron_right),
-                        ),
-                      ),
-                    ),
+                    // Container(
+                    //   decoration: const BoxDecoration(),
+                    //   child: InkWell(
+                    //     onTap: () {
+                    //       // Get.to(const CustProfileTabAddressScreen());
+                    //       Get.toNamed(AppRoutes.selectAddressScreen);
+                    //     },
+                    //     child: const ListTile(
+                    //       leading: Icon(
+                    //         Icons.location_on,
+                    //       ),
+                    //       title: Text("Address"),
+                    //       trailing: Icon(Icons.chevron_right),
+                    //     ),
+                    //   ),
+                    // ),
                     Container(
                       decoration: const BoxDecoration(),
                       child: InkWell(

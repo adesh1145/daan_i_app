@@ -29,11 +29,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBar(
+          appBar: const CustomAppBar(
           tittle: "History",
         ),
         body: ListView.builder(
-            itemCount: 3,
+            itemCount: 1,
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {},
@@ -147,10 +147,10 @@ class _HistoryScreenState extends State<HistoryScreen> {
                         padding: EdgeInsets.only(top: 13.h, bottom: 10),
                         child: Row(
                           children: [
-                            Icon(Icons.location_on),
+                            Icon(Icons.location_on,color: Colors.blue,),
                             Expanded(
                                 child: Text(
-                              "c block ganganagar meerut 250001",
+                              " Ganganagar Meerut 250001",
                               style: AppStyle.roboto13onBackgroundw500
                                   .copyWith(color: Colors.black87),
                             )),
@@ -161,6 +161,8 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   ),
                 ),
               );
-            }));
+            }
+        )
+      );
   }
 }
