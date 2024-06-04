@@ -6,7 +6,7 @@ import '../../../../data/models/donar_models/donar_profile_deail_model.dart';
 import '../../../../data/network/network_api_services.dart';
 import '../../../../widgets/my_widget/custom_image_picker.dart';
 
-class NgoProfileTabController extends GetxController {
+class NgoTabController extends GetxController {
   RxBool isLoading = false.obs;
   Rx<Respons> donarDetail = Respons().obs;
   TextEditingController nameCOntroller = TextEditingController();

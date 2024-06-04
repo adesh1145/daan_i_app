@@ -127,6 +127,11 @@ class AppStyle {
     fontSize: 10.sp,
     fontWeight: FontWeight.w400,
   );
+  static TextStyle roboto11outlinew400 = GoogleFonts.roboto(
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w400,
+    color:Theme.of(Get.context!).colorScheme.outline
+  );
   static TextStyle roboto10w500 = GoogleFonts.roboto(
     fontSize: 10.sp,
     fontWeight: FontWeight.w500,

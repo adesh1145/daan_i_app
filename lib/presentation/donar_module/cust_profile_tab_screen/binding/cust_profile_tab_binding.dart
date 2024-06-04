@@ -4,6 +4,6 @@ import 'package:get/get.dart';
 class CustProfileTabBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => CustProfileTabController());
+    Get.lazyPut(() => NgoProfileTabController());
   }
 }

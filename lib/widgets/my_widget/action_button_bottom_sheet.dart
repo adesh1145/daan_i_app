@@ -64,7 +64,8 @@ class ActionButtonBottomSheet extends GetxController {
                         ),
                         Padding(
                           padding: EdgeInsets.only(top: 40.h),
-                          child: Row(
+                          child:
+                           Row(
                             children: [
                               leftBtnText == null
                                   ? Container()

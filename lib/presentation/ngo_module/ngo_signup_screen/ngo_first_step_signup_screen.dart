@@ -1,0 +1,261 @@
+import 'package:daan_i_app/widgets/my_widget/custom_image_view.dart';
+
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:daan_i_app/widgets/my_widget/custom_loader.dart';
+import '../../../../core/app_export.dart';
+import '../../../widgets/my_widget/custom_text_form_field.dart';
+import 'controller/ngo_signup_controller.dart';
+import 'ngo_third_step_signup_screen.dart';
+
+class NgoFirstStepSignUpScreen extends StatelessWidget {
+  const NgoFirstStepSignUpScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder(
+      init: NgoSignUpController(),
+      builder: (controller) {
+        return Obx(() => CustomLoader(
+              isLoading: controller.isLoading.value,
+              child: Scaffold(
+                // appBar: CustomAppBar(
+                //   tittle: AppLocalizations.of(context)!.selectLanguage,
+                //   centerTitle: true,
+                //   isBackBtnVisible: false,
+                // ),
+        
+                body: Stack(
+                  children: [
+                    SizedBox(
+                      width: Get.width,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomImageView(
+                            imagePath: ImageConstant.appLogo,
+                            // width: double.maxFinite,
+                            height: 200.h,
+                            // alignment: Alignment.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional.bottomEnd,
+                      child: Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                        height: 490.h,
+                        width: double.maxFinite,
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.secondaryContainer,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20.r),
+                              topRight: Radius.circular(20.r)),
+                        ),
+                        child: Form(
+                          key: controller.signupFormKey,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          child: SingleChildScrollView(
+                            child: Column(children: [
+                              AnimatedTextKit(
+                                repeatForever: true,
+                                isRepeatingAnimation: true,
+                                animatedTexts: [
+                                  TyperAnimatedText("Welcome Daan-i",
+                                      speed: const Duration(milliseconds: 100),
+                                      textStyle: AppStyle.roboto20w600),
+                                ],
+                                onTap: () {},
+                              ),
+                              SizedBox(
+                                height: 6.h,
+                              ),
+                              CustomText(" SignUp with Email",
+                                  style: AppStyle.roboto14w400),
+                              SizedBox(
+                                height: 24.h,
+                              ),
+                              CustomTextFormField(
+                                prefixIcon: const Icon(Icons.email_outlined),
+                                hintText: " Enter Email",
+                                labelText: "Email",
+                                controller: controller.emailController.value,
+                                keyboardType: TextInputType.emailAddress,
+                                textInputAction: TextInputAction.next,
+                                onEditingComplete: () {},
+                                validator: (p0) => p0 != null && p0.isEmpty
+                                    ? "Please Enter Email"
+                                    : null,
+                                suffixIconConstraints: BoxConstraints(
+                                  maxHeight: 25.h,
+                                ),
+                                // suffixIcon: Padding(
+                                //   padding: EdgeInsets.only(right: 6.w),
+                                //   child: controller.isOtpVerfied.value
+                                //       ? const Icon(
+                                //           Icons.verified,
+                                //           color: ColorConstant.success,
+                                //         )
+                                //       : CustomElevatedButton(
+                                //           isExpanded: false,
+                                //           text: "Verify",
+                                //           padding: EdgeInsets.zero,
+                                //           onTap: () => Get.toNamed(
+                                //               AppRoutes.otpScreen,
+                                //               arguments: {
+                                //                 'mobile': "7007765672"
+                                //               }),
+                                //           textStyle:
+                                //               AppStyle.roboto12Backgroundw500,
+                                //           borderRadius:
+                                //               BorderRadiusStyle.roundedBorder6,
+                                //         ),
+                                // ),
+                              ),
+                              SizedBox(
+                                height: 12.h,
+                              ),
+                              CustomTextFormField(
+                                prefixIcon: const Icon(Icons.phone),
+                                hintText: " Enter Number",
+                                labelText: "Number",
+                                controller: controller.mobileController.value,
+                                keyboardType: TextInputType.number,
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.digitsOnly,
+                                  LengthLimitingTextInputFormatter(10)
+                                ],
+                                textInputAction: TextInputAction.next,
+                                onEditingComplete: () {},
+                                validator: (p0) =>
+                                    p0 != null && (p0.isEmpty || p0.length != 10)
+                                        ? "Please Enter 10 Digit Mobile Number"
+                                        : null,
+                              ),
+                              SizedBox(
+                                height: 12.h,
+                              ),
+                              CustomTextFormField(
+                                prefixIcon: const Icon(Icons.person),
+                                hintText: " Enter Full Name",
+                                labelText: "NGO Name",
+                                controller: controller.nameController.value,
+                                keyboardType: TextInputType.emailAddress,
+                                textInputAction: TextInputAction.next,
+                                onEditingComplete: () {},
+                                validator: (p0) => p0 != null && p0.isEmpty
+                                    ? "Please Enter Full Name"
+                                    : null,
+                              ),
+                              SizedBox(
+                                height: 12.h,
+                              ),
+                              CustomTextFormField(
+                                prefixIcon: const Icon(Icons.password_outlined),
+                                hintText: " Enter Password",
+                                labelText: "Password",
+                                isPassword: true,
+                                controller: controller.passController.value,
+                                keyboardType: TextInputType.visiblePassword,
+                                textInputAction: TextInputAction.next,
+                                onEditingComplete: () {},
+                                validator: (p0) => p0 != null && p0.isEmpty
+                                    ? "Please Enter Password"
+                                    : null,
+                              ),
+                              SizedBox(
+                                height: 12.h,
+                              ),
+                              CustomTextFormField(
+                                prefixIcon: const Icon(Icons.password_outlined),
+                                hintText: " Enter Confirm Password",
+                                labelText: "Confirm Password",
+                                isPassword: true,
+                                controller: controller.confirmPassController.value,
+                                keyboardType: TextInputType.visiblePassword,
+                                textInputAction: TextInputAction.done,
+                                onEditingComplete: () {},
+                                validator: (p0) => p0 != null && p0.isEmpty
+                                    ? "Please Enter Password"
+                                    : p0 != controller.passController.value.text
+                                        ? "Password does not Match"
+                                        : null,
+                              ),
+                              SizedBox(
+                                height: 5.h,
+                              ),
+
+                              Row(
+                                // mainAxisAlignment: MainAxisAlignment.start,
+                                // crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Checkbox(
+                                    // splashRadius: 2,
+                                   value:controller.ischecked.value,
+                                   onChanged:(newValue){
+                                      controller.ischecked.value=newValue??controller.ischecked.value;
+                                   }
+                                  ),
+
+                                  Text("I have read the agreement and I acccept it.",
+                                  
+                                  style:  TextStyle(fontSize: 12),
+                                  )
+                                ],
+                              ),
+                              CustomElevatedButton(
+                                text: "Next",
+                                padding: EdgeInsets.symmetric(vertical: 10.h),
+                                onTap: () {
+                                  Get.to(NgothirdStepScreen());
+                                },
+                              ),
+                              InkWell(
+                                  onTap: () => Get.back(),
+                                  child: Padding(
+                                    padding: EdgeInsets.only(top: 6.h),
+                                    child: CustomText(
+                                      "LogIn?",
+                                      style: AppStyle.roboto12w400,
+                                    ),
+                                  )),
+                              SizedBox(
+                                height: 24.h,
+                              ),
+                              // Row(
+                              //   children: [
+                              //     Expanded(
+                              //         child: Divider(
+                              //       color: Theme.of(context).colorScheme.outline,
+                              //     )),
+                              //     Padding(
+                              //       padding: EdgeInsets.symmetric(horizontal: 12.w),
+                              //       child: CustomText("Sign Up with"),
+                              //     ),
+                              //     Expanded(
+                              //         child: Divider(
+                              //       color: Theme.of(context).colorScheme.outline,
+                              //     )),
+                              //   ],
+                              // ),
+                              SizedBox(
+                                height: 24.h,
+                              ),
+                              // CustomImageView(
+                              //   svgPath: ImageConstant.google,
+                              //   height: 48.h,
+                              // ),
+                            ]),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ));
+      }
+    );
+  }
+}

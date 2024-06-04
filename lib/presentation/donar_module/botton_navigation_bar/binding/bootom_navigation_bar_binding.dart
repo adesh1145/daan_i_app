@@ -11,7 +11,7 @@ class CustBottomNavigationBarBinding extends Bindings {
   void dependencies() {
     Get.lazyPut<CustBottomNavigationBarController>(
         () => CustBottomNavigationBarController());
-    Get.lazyPut<CustProfileTabController>(() => CustProfileTabController());
+    Get.lazyPut<NgoProfileTabController>(() => NgoProfileTabController());
     Get.lazyPut<HomeScreenTabController>(() => HomeScreenTabController());
   }
 }

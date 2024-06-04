@@ -14,11 +14,7 @@ class LoginScreen extends GetWidget<LoginController> {
     return Obx(() => CustomLoader(
           isLoading: controller.isLoading.value,
           child: Scaffold(
-            // appBar: CustomAppBar(
-            //   tittle: AppLocalizations.of(context)!.selectLanguage,
-            //   centerTitle: true,
-            //   isBackBtnVisible: false,
-            // ),
+            
 
             body: Stack(
               children: [
